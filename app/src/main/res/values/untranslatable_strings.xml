@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name" translatable="false">Net Probe</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="xda" translatable="false">XDA</string>
+    <string name="google_dev" translatable="false">Google Dev</string>
+    <string name="bulgarian" translatable="false">Български</string>
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">Français</string>
+    <string name="hungarian" translatable="false">Magyar</string>
+    <string name="german" translatable="false">Deutsch</string>
+    <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
+    <string name="italian" translatable="false">Italiano</string>
+    <string name="japanese" translatable="false">日本語</string>
+    <string name="polish" translatable="false">Polski</string>
+    <string name="romanian" translatable="false">Română</string>
+    <string name="russian" translatable="false">Русский</string>
+    <string name="spanish" translatable="false">Español</string>
+    <string name="turkish" translatable="false">Türkçe</string>
+    <string name="ukrainian" translatable="false">Українська</string>
+    <string name="arch" translatable="false">Arch:</string>
+    <string name="default_ip_address" translatable="false">192.168.0.1</string>
+    <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
+    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
+    <string name="changes" translatable="false">\n
+        • No information provided by the developer.
+    </string>
+</resources>
