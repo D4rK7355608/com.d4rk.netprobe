@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,7 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/scan"/>
+                android:text="@string/scan"
+                android:tooltipText="@string/tooltip_start_scan"/>
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_view_ip"
                 android:layout_width="match_parent"
@@ -93,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     ads:adSize="MEDIUM_RECTANGLE"
-                    ads:adUnitId="ca-app-pub-5294151573817700/8040893463"/>
+                    ads:adUnitId="ca-app-pub-5294151573817700/6563108883"/>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </me.zhanghai.android.fastscroll.FastScrollScrollView>
@@ -103,8 +105,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:importantForAccessibility="no"
         android:src="@drawable/ic_perm_device_information"
-        ads:layout_constraintBottom_toBottomOf="parent"
-        ads:layout_constraintEnd_toEndOf="parent"/>
+        android:contentDescription="@string/content_description_radio"
+        android:tooltipText="@string/tooltip_network"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

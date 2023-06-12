@@ -77,6 +77,7 @@
     <string name="check_license">Проверка на лиценз [CHECK_LICENSE]</string>
     <string name="read_phone_state">Прочетете състоянието на телефона [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Правила за уведомяване за достъп [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="content_description_radio">Показване на радиоинформация.</string>
     <string name="notifications">Известия</string>
     <string name="notification_settings">Настройки за известията</string>
     <string name="notification_last_time_used_title">От доста време!</string>
@@ -119,4 +120,6 @@
     <string name="snack_connection_timeout">Изчакване на връзката. ⚠️</string>
     <string name="snack_connection_error">Грешка при свързване. ⚠️</string>
     <string name="snack_feedback">Благодаря, че ни оценихте!</string>
+    <string name="tooltip_start_scan">Започнете сканиране.</string>
+    <string name="tooltip_network">Информация за мрежата.</string>
 </resources>

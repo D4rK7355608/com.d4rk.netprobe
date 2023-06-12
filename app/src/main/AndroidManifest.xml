@@ -80,6 +80,6 @@
             android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5294151573817700~1050558256"/>
+            android:value="ca-app-pub-5294151573817700~3749243285"/>
     </application>
 </manifest>

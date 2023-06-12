@@ -7,7 +7,7 @@
         <androidx.preference.ListPreference
             app:defaultValue="@string/default_value_theme"
             app:entries="@array/preference_theme_entries"
-            app:entryValues="@array/dark_mode_values"
+            app:entryValues="@array/preference_theme_values"
             app:icon="@drawable/ic_theme"
             app:key="@string/key_theme"
             app:title="@string/theme"

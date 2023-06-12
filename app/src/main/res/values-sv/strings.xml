@@ -77,6 +77,7 @@
     <string name="check_license">Kontrollera licensen [CHECK_LICENSE]</string>
     <string name="read_phone_state">Läs telefonstatus [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Åtkomstmeddelandepolicy [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="content_description_radio">Visa radiouppgifter.</string>
     <string name="notifications">Aviseringar</string>
     <string name="notification_settings">Aviseringsinställningar</string>
     <string name="notification_last_time_used_title">Det var ett tag sedan!</string>
@@ -119,4 +120,6 @@
     <string name="snack_connection_timeout">Timeout för anslutning. ⚠️</string>
     <string name="snack_connection_error">Anslutningsfel. ⚠️</string>
     <string name="snack_feedback">Tack för att du betygsatte oss!</string>
+    <string name="tooltip_start_scan">Starta skanning.</string>
+    <string name="tooltip_network">Nätverksinformation.</string>
 </resources>

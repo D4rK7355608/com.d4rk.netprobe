@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 ads:adSize="FULL_BANNER"
-                ads:adUnitId="ca-app-pub-5294151573817700/8040893463"/>
+                ads:adUnitId="ca-app-pub-5294151573817700/6563108883"/>
         </com.google.android.material.card.MaterialCardView>
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_about"

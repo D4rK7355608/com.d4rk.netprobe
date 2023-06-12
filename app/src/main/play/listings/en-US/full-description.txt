@@ -4,7 +4,7 @@
 ║║║║╩╣╚╣═╣║║║║║╩╣
 ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-The easy way to scan IP addresses and websites.! 🌐
+The easy way to scan IP addresses and websites! 🌐
 
 Net Probe is a simple Android app that allows users to scan an IP address or website address to determine the associated server type. The app's main purpose is to provide users with crucial information, such as response code, server function, response time, camera status, and the number of servers identified as cameras.
 

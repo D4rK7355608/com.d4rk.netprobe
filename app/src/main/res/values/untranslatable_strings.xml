@@ -25,6 +25,6 @@
     <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • No information provided by the developer.
+        • Initial stable version.
     </string>
 </resources>

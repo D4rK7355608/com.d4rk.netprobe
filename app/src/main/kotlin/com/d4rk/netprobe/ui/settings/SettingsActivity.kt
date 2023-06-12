@@ -33,7 +33,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         val themeKey = getString(R.string.key_theme)
         key?.let {
             if (it == themeKey) sharedPreferences?.let { pref ->
-                val themeValues = resources.getStringArray(R.array.dark_mode_values)
+                val themeValues = resources.getStringArray(R.array.preference_theme_values)
                 when (pref.getString(themeKey, themeValues[0])) {
                     themeValues[0] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                     themeValues[1] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
