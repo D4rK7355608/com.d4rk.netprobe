@@ -8,8 +8,8 @@ class AppUsageNotificationsManager(private val context: Context) {
     private val appUsageChannelId = "app_usage_channel"
     private val appUsageNotificationId = 0
     fun checkAndSendAppUsageNotification() {
-        val prefs = context.getSharedPreferences("app_usage", Context.MODE_PRIVATE)
-        val lastUsedTimestamp = prefs.getLong("last_used", 0)
+        val preferences = context.getSharedPreferences("app_usage", Context.MODE_PRIVATE)
+        val lastUsedTimestamp = preferences.getLong("last_used", 0)
         val currentTimestamp = System.currentTimeMillis()
         val notificationThreshold = 3 * 24 * 60 * 60 * 1000
         if (currentTimestamp - lastUsedTimestamp > notificationThreshold) {
@@ -23,6 +23,6 @@ class AppUsageNotificationsManager(private val context: Context) {
                 .setAutoCancel(true)
             notificationManager.notify(appUsageNotificationId, notificationBuilder.build())
         }
-        prefs.edit().putLong("last_used", currentTimestamp).apply()
+        preferences.edit().putLong("last_used", currentTimestamp).apply()
     }
 }

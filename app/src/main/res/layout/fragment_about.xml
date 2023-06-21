@@ -155,6 +155,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
             android:id="@+id/card_view_ad"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.d4rk.netprobe.ads
+package com.d4rk.netprobe.ads.managers
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -18,7 +18,7 @@ import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import java.util.Date
 private const val AD_UNIT_ID = "ca-app-pub-5294151573817700/6870214737"
-class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
+class AppOpenAdManager : MultiDexApplication(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
   private lateinit var appOpenAdManager: AppOpenAdManager
   private var currentActivity: Activity? = null
   override fun onCreate() {
@@ -58,15 +58,15 @@ class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, Lifec
       isLoadingAd = true
       val request = AdRequest.Builder().build()
       AppOpenAd.load(context, AD_UNIT_ID, request, AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, object : AppOpenAdLoadCallback() {
-          override fun onAdLoaded(ad: AppOpenAd) {
-            appOpenAd = ad
-            isLoadingAd = false
-            loadTime = Date().time
-          }
-          override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-            isLoadingAd = false
-          }
+        override fun onAdLoaded(ad: AppOpenAd) {
+          appOpenAd = ad
+          isLoadingAd = false
+          loadTime = Date().time
         }
+        override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+          isLoadingAd = false
+        }
+      }
       )
     }
     @Suppress("SameParameterValue")
@@ -81,9 +81,9 @@ class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, Lifec
     }
     fun showAdIfAvailable(activity: Activity) {
       showAdIfAvailable(activity, object : OnShowAdCompleteListener {
-          override fun onShowAdComplete() {
-          }
+        override fun onShowAdComplete() {
         }
+      }
       )
     }
     fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) {

@@ -1,6 +1,5 @@
 package com.d4rk.netprobe
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -29,20 +28,18 @@ import com.google.firebase.analytics.FirebaseAnalytics
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var prefs: SharedPreferences
     private lateinit var appUpdateManager: AppUpdateManager
     private val requestUpdateCode = 1
     private lateinit var appUpdateNotificationsManager: AppUpdateNotificationsManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        prefs = getSharedPreferences("startup", MODE_PRIVATE)
         binding = ActivityMainBinding.inflate(layoutInflater)
         appUpdateManager = AppUpdateManagerFactory.create(this)
         appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
         setContentView(binding.root)
-        applyAppSettings()
         setSupportActionBar(binding.appBarMain.toolbar)
+        applyAppSettings()
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController by lazy {
@@ -89,26 +86,27 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        val appUsageNotificationsManager = AppUsageNotificationsManager(this)
-        appUsageNotificationsManager.checkAndSendAppUsageNotification()
-        appUpdateNotificationsManager.checkAndSendUpdateNotification()
-        if (prefs.getBoolean("value", true)) {
-            prefs.edit().putBoolean("value", false).apply()
-            startActivity(Intent(this, StartupActivity::class.java))
-        }
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val preferenceFirebaseKey = getString(R.string.key_firebase)
-        val preferenceFirebase = sharedPreferences.getBoolean(preferenceFirebaseKey, true)
-        if (!preferenceFirebase) {
+        if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.key_firebase), true)) {
             FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(false)
         } else {
             FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(true)
         }
+        val appUsageNotificationsManager = AppUsageNotificationsManager(this)
+        appUsageNotificationsManager.checkAndSendAppUsageNotification()
+        appUpdateNotificationsManager.checkAndSendUpdateNotification()
         appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
                 @Suppress("DEPRECATION")
                 appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.FLEXIBLE, this, requestUpdateCode)
             }
+        }
+        startupScreen()
+    }
+    private fun startupScreen() {
+        val startupPreference = getSharedPreferences("startup", MODE_PRIVATE)
+        if (startupPreference.getBoolean("value", true)) {
+            startupPreference.edit().putBoolean("value", false).apply()
+            startActivity(Intent(this, StartupActivity::class.java))
         }
     }
     @Deprecated("Deprecated in Java")
