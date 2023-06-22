@@ -13,15 +13,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Initial commit">
+    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Update 1.1_r1">
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
@@ -29,16 +25,26 @@
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ads/Ads.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/notifications/AppUsageNotificationsManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/notifications/AppUsageNotificationsManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/startup/StartupActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/startup/StartupActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/about/AboutFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/about/AboutFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/SettingsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/SettingsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-bg/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-bg/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hu/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hu/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ja/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ja/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-pl/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ro/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ro/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ru/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ru/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-sv/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-sv/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-tr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-tr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-uk/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-uk/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/preferences_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preferences_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/preferences_permissions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preferences_permissions.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +56,44 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Net Probe" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Net Probe" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Net Probe" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Net Probe" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,7 +108,6 @@
     <option name="KEY_STORE_PATH" value="C:\Users\d4rk7\Documents\Google\Google Play Console\Apps\Keys\com.d4rk.netprobe.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -318,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686544226104</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Update 1.1_r1">
+      <created>1687347042507</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687347042507</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,10 +387,10 @@
     <MESSAGE value="Update 1.0_r1" />
     <MESSAGE value="Update 1.0_r2" />
     <MESSAGE value="Update 1.0_r3" />
-    <MESSAGE value="Update 1.1_r1" />
     <MESSAGE value="Update 1.2_r1" />
     <MESSAGE value="Update 2.0_r1" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Update 1.1_r1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 1.1_r1" />
   </component>
 </project>

@@ -75,8 +75,9 @@
     <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
     <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
     <string name="check_license">Check license [CHECK_LICENSE]</string>
-    <string name="read_phone_state">Read phone state [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
+    <string name="read_phone_state">Read phone state [READ_PHONE_STATE]</string>
     <string name="content_description_radio">Show radio information.</string>
     <string name="notifications">Notifications</string>
     <string name="notification_settings">Notification settings</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Allows the app to read the phone\'s state, including the device\'s phone number, current cellular network information, and the status of ongoing calls to redirect the user to a specific system setting related to phone information, providing access to additional functionality or configuration options.</string>
     <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
     <string name="summary_preference_permissions_access_notification_policy">Allows the app to access and modify the device\'s notification policy, controlling how and when notifications are displayed to the user and providing custom notification management features.</string>
+    <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
     <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
     <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
     <string name="summary_preference_settings_language">Set application language.</string>

@@ -77,6 +77,7 @@
     <string name="check_license">Periksa lisensi [CHECK_LICENSE]</string>
     <string name="read_phone_state">Baca status ponsel [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Kebijakan pemberitahuan akses [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Layanan latar depan [FOREGROUND_SERVICE]</string>
     <string name="content_description_radio">Tampilkan informasi radio.</string>
     <string name="notifications">Notifikasi</string>
     <string name="notification_settings">Pengaturan pemberitahuan</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Mengizinkan aplikasi membaca status ponsel, termasuk nomor telepon perangkat, informasi jaringan seluler saat ini, dan status panggilan yang sedang berlangsung untuk mengalihkan pengguna ke setelan sistem tertentu yang terkait dengan informasi ponsel, menyediakan akses ke tambahan fungsionalitas atau opsi konfigurasi.</string>
     <string name="summary_preference_permissions_check_license">Mengizinkan aplikasi memverifikasi kepatuhannya terhadap perjanjian lisensi dan menegakkan persyaratan lisensi untuk melindungi kekayaan intelektual.</string>
     <string name="summary_preference_permissions_access_notification_policy">Mengizinkan aplikasi mengakses dan mengubah kebijakan pemberitahuan perangkat, mengontrol cara dan waktu pemberitahuan ditampilkan kepada pengguna, dan menyediakan fitur manajemen pemberitahuan ubahsuaian.</string>
+    <string name="summary_preference_permissions_foreground_service">Memungkinkan aplikasi untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberikan prioritas kepada mereka dibandingkan dengan proses latar belakang lainnya, dan meningkatkan kinerja dan keandalan.</string>
     <string name="summary_preference_settings_firebase">Ini memungkinkan kami mengumpulkan informasi tentang kinerja aplikasi dan log kerusakan.</string>
     <string name="summary_preference_settings_support_me">Klik di sini jika Anda ingin mendukung saya tanpa membayar uang. Hanya beberapa waktu untuk melihat iklan.</string>
     <string name="summary_preference_settings_language">Tetapkan bahasa aplikasi.</string>

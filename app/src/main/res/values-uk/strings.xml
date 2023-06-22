@@ -77,6 +77,7 @@
     <string name="check_license">Перевірити ліцензію [CHECK_LICENSE]</string>
     <string name="read_phone_state">Читати стан телефону [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Політика сповіщень про доступ [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Служба на передньому плані [FOREGROUND_SERVICE]</string>
     <string name="content_description_radio">Показати інформацію про радіо.</string>
     <string name="notifications">Сповіщення</string>
     <string name="notification_settings">Налаштування сповіщень</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Дозволяє програмі зчитувати стан телефону, включаючи номер телефону пристрою, інформацію про поточну стільникову мережу та статус поточних дзвінків, щоб перенаправляти користувача до певних налаштувань системи, пов’язаних із інформацією про телефон, надаючи доступ до додаткових функціональність або параметри конфігурації.</string>
     <string name="summary_preference_permissions_check_license">Дозволяє програмі перевіряти відповідність ліцензійній угоді та застосовувати умови ліцензування для захисту інтелектуальної власності.</string>
     <string name="summary_preference_permissions_access_notification_policy">Дозволяє додатку отримувати доступ і змінювати політику сповіщень пристрою, контролюючи, як і коли сповіщення відображаються користувачеві, і надаючи спеціальні функції керування сповіщеннями.</string>
+    <string name="summary_preference_permissions_foreground_service">Дозволяє додатку створювати та використовувати служби, які працюють у передньому плані, надаючи їм пріоритет перед іншими фоновими процесами та покращуючи продуктивність та надійність.</string>
     <string name="summary_preference_settings_firebase">Це дозволить нам збирати інформацію про продуктивність програми та журнали збоїв.</string>
     <string name="summary_preference_settings_support_me">Натисніть тут, якщо ви хочете підтримати мене, не платячи грошей. Лише трохи часу для перегляду оголошення.</string>
     <string name="summary_preference_settings_language">Встановити мову програми.</string>

@@ -34,6 +34,10 @@
             app:summary="@string/summary_preference_permissions_check_license"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
+            app:title="@string/foreground_service"
+            app:summary="@string/summary_preference_permissions_foreground_service"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
             app:title="@string/read_phone_state"
             app:summary="@string/summary_preference_permissions_read_phone_state"
             app:iconSpaceReserved="false"/>

@@ -77,6 +77,7 @@
     <string name="check_license">Vérifier la licence [CHECK_LICENSE]</string>
     <string name="read_phone_state">Lire l\'état du téléphone [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Politique de notification d\'accès [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Service en premier plan [FOREGROUND_SERVICE]</string>
     <string name="content_description_radio">Afficher les informations de la radio.</string>
     <string name="notifications">Avis</string>
     <string name="notification_settings">Paramètres de notification</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Permet à l\'application de lire l\'état du téléphone, y compris le numéro de téléphone de l\'appareil, les informations actuelles sur le réseau cellulaire et l\'état des appels en cours pour rediriger l\'utilisateur vers un paramètre système spécifique lié aux informations du téléphone, donnant accès à des informations supplémentaires. fonctionnalités ou options de configuration.</string>
     <string name="summary_preference_permissions_check_license">Permet à l\'application de vérifier sa conformité avec le contrat de licence et d\'appliquer les conditions de licence pour protéger la propriété intellectuelle.</string>
     <string name="summary_preference_permissions_access_notification_policy">Permet à l\'application d\'accéder à la politique de notification de l\'appareil et de la modifier, en contrôlant comment et quand les notifications sont affichées à l\'utilisateur et en fournissant des fonctionnalités de gestion des notifications personnalisées.</string>
+    <string name="summary_preference_permissions_foreground_service">Permet à l\'application de créer et d\'utiliser des services qui s\'exécutent en premier plan, leur donnant la priorité sur les autres processus en arrière-plan et améliorant les performances et la fiabilité.</string>
     <string name="summary_preference_settings_firebase">Cela nous permet de collecter des informations sur les performances de l\'application et les journaux de plantage.</string>
     <string name="summary_preference_settings_support_me">Cliquez ici si vous voulez me soutenir sans payer d\'argent. Juste un peu de temps pour visionner une annonce.</string>
     <string name="summary_preference_settings_language">Définir la langue de l\'application.</string>

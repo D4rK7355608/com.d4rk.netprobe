@@ -77,6 +77,7 @@
     <string name="check_license">Lisansı kontrol edin [CHECK_LICENSE]</string>
     <string name="read_phone_state">Telefon durumunu oku [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Erişim bildirimi politikası [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Ön planda çalışan hizmet [FOREGROUND_SERVICE]</string>
     <string name="content_description_radio">Radyo bilgisini göster.</string>
     <string name="notifications">Bildirimler</string>
     <string name="notification_settings">Bildirim ayarları</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Uygulamaya, kullanıcıyı telefon bilgileriyle ilgili belirli bir sistem ayarına yönlendirmek için cihazın telefon numarası, geçerli hücresel ağ bilgileri ve devam eden aramaların durumu dahil olmak üzere telefonun durumunu okuma izni verir ve ek bilgilere erişim sağlar. işlevsellik veya yapılandırma seçenekleri.</string>
     <string name="summary_preference_permissions_check_license">Uygulamaya, fikri mülkiyeti korumak için lisans sözleşmesine uygunluğunu doğrulama ve lisanslama şartlarını uygulama izni verir.</string>
     <string name="summary_preference_permissions_access_notification_policy">Uygulamaya, bildirimlerin kullanıcıya nasıl ve ne zaman görüntüleneceğini kontrol ederek ve özel bildirim yönetimi özellikleri sağlayarak cihazın bildirim politikasına erişme ve bunları değiştirme izni verir.</string>
+    <string name="summary_preference_permissions_foreground_service">Uygulamanın öncelikli bir hizmet olarak çalışmasına izin verir, böylece arka planda çalışmaya devam edebilir ve bildirimler gönderebilir.</string>
     <string name="summary_preference_settings_firebase">Bu, uygulama performansı ve kilitlenme günlükleri hakkında bilgi toplamamızı sağlar.</string>
     <string name="summary_preference_settings_support_me">Para ödemeden bana destek olmak istiyorsanız tıklayın. Bir reklamı görüntülemek için sadece biraz zaman.</string>
     <string name="summary_preference_settings_language">Uygulama dilini ayarlayın.</string>

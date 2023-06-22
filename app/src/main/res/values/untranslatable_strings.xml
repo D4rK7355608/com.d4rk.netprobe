@@ -28,8 +28,8 @@
     <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new GDPR message to comply with Google Play policy.\n\n
-        • Made minor project structure enhancements for better readability and maintainability.\n\n
+        • Added missing permission to permissions tab.\n\n
+        • Added snack bars instead of toasts for all notifications.\n\n
         • Made minor under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

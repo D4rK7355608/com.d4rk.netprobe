@@ -77,6 +77,7 @@
     <string name="check_license">Sprawdź licencję [CHECK_LICENSE]</string>
     <string name="read_phone_state">Przeczytaj stan telefonu [READ_PHONE_STATE]</string>
     <string name="access_notification_policy">Zasady powiadamiania o dostępie [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Usługa w tle [FOREGROUND_SERVICE]</string>
     <string name="content_description_radio">Pokaż informacje o radiu.</string>
     <string name="notifications">Powiadomienia</string>
     <string name="notification_settings">Ustawienia powiadomień</string>
@@ -107,6 +108,7 @@
     <string name="summary_preference_permissions_read_phone_state">Zezwala aplikacji na odczyt stanu telefonu, w tym numeru telefonu urządzenia, bieżących informacji o sieci komórkowej oraz stanu trwających połączeń, aby przekierować użytkownika do określonego ustawienia systemowego związanego z informacjami o telefonie, zapewniając dostęp do dodatkowych funkcjonalność lub opcje konfiguracji.</string>
     <string name="summary_preference_permissions_check_license">Pozwala aplikacji weryfikować zgodność z umową licencyjną i egzekwować warunki licencji w celu ochrony własności intelektualnej.</string>
     <string name="summary_preference_permissions_access_notification_policy">Zezwala aplikacji na dostęp i modyfikację zasad powiadomień urządzenia, kontrolowanie sposobu i czasu wyświetlania powiadomień użytkownikowi oraz udostępnianie niestandardowych funkcji zarządzania powiadomieniami.</string>
+    <string name="summary_preference_permissions_foreground_service">Pozwala aplikacji tworzyć i używać usług działających na pierwszym planie, nadając im priorytet nad innymi procesami w tle i poprawiając wydajność i niezawodność.</string>
     <string name="summary_preference_settings_firebase">Dzięki temu możemy zbierać informacje o wydajności aplikacji i dziennikach awarii.</string>
     <string name="summary_preference_settings_support_me">Kliknij tutaj, jeśli chcesz mnie wesprzeć bez wpłacania pieniędzy. Tylko trochę czasu na obejrzenie reklamy.</string>
     <string name="summary_preference_settings_language">Ustaw język aplikacji.</string>
