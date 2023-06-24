@@ -56,7 +56,6 @@
     <string name="faq">SSS</string>
     <string name="send_feedback">Geribildirim yolla</string>
     <string name="about">Hakkında</string>
-    <string name="open_me">aç beni 🌐</string>
     <string name="app_version">Sürüm %1$s (%2$d)</string>
     <string name="music">Müzik</string>
     <string name="made_in">Romanya\'da ❤ ile yapıldı!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Bağlantı zamanaşımı. ⚠️</string>
     <string name="snack_connection_error">Bağlantı hatası. ⚠️</string>
     <string name="snack_feedback">Bizi değerlendirdiğiniz için teşekkürler!</string>
+    <string name="tooltip_agree">Şartları ve koşulları kabul edin.</string>
     <string name="tooltip_start_scan">Taramayı başlat.</string>
     <string name="tooltip_network">Ağ bilgisi.</string>
+    <string name="tooltip_open_me">aç beni 🌐</string>
 </resources>

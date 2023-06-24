@@ -56,7 +56,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Trimite feedback</string>
     <string name="about">Despre</string>
-    <string name="open_me">Deschide-mă 🌐</string>
     <string name="app_version">Versiunea %1$s (%2$d)</string>
     <string name="music">Muzică</string>
     <string name="made_in">Fabricat cu ❤ in Romania!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Timeout de conexiune. ⚠️</string>
     <string name="snack_connection_error">Eroare de conexiune. ⚠️</string>
     <string name="snack_feedback">Vă mulțumim că ne-ați evaluat!</string>
+    <string name="tooltip_agree">Acceptați termenii și condițiile.</string>
     <string name="tooltip_start_scan">Începe scanarea.</string>
     <string name="tooltip_network">Informații despre rețea.</string>
+    <string name="tooltip_open_me">Deschide-mă 🌐</string>
 </resources>

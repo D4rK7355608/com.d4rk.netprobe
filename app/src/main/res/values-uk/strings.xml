@@ -56,7 +56,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Надіслати відгук</string>
     <string name="about">про</string>
-    <string name="open_me">Відкрий мене 🌐</string>
     <string name="app_version">Версія %1$s (%2$d)</string>
     <string name="music">музика</string>
     <string name="made_in">Зроблено з ❤ в Румунії!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Час очікування підключення. ⚠️</string>
     <string name="snack_connection_error">Помилка з\'єднання. ⚠️</string>
     <string name="snack_feedback">Дякуємо за оцінку!</string>
+    <string name="tooltip_agree">Прийміть умови та положення.</string>
     <string name="tooltip_start_scan">Почати сканування.</string>
     <string name="tooltip_network">Інформація про мережу.</string>
+    <string name="tooltip_open_me">Відкрий мене 🌐</string>
 </resources>

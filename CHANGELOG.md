@@ -1,3 +1,6 @@
+# Version 1.2_r2:
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 1.2_r1:
 - Added missing permission to permissions tab.
 - Added snack bars instead of toasts for all notifications.

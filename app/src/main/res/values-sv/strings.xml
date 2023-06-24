@@ -56,7 +56,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Skicka synpunkter</string>
     <string name="about">Handla om</string>
-    <string name="open_me">Öppna mig 🌐</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="music">musik</string>
     <string name="made_in">Tillverkad med ❤ i Rumänien!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Timeout för anslutning. ⚠️</string>
     <string name="snack_connection_error">Anslutningsfel. ⚠️</string>
     <string name="snack_feedback">Tack för att du betygsatte oss!</string>
+    <string name="tooltip_agree">Acceptera villkoren och bestämmelserna.</string>
     <string name="tooltip_start_scan">Starta skanning.</string>
     <string name="tooltip_network">Nätverksinformation.</string>
+    <string name="tooltip_open_me">Öppna mig 🌐</string>
 </resources>

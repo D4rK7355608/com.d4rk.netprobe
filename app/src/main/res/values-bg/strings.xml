@@ -56,7 +56,6 @@
     <string name="faq">ЧЗВ</string>
     <string name="send_feedback">Изпратете отзиви</string>
     <string name="about">относно</string>
-    <string name="open_me">Отвори ме 🌐</string>
     <string name="app_version">Версия %1$s (%2$d)</string>
     <string name="music">Музика</string>
     <string name="made_in">Произведено с ❤ в Румъния!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Изчакване на връзката. ⚠️</string>
     <string name="snack_connection_error">Грешка при свързване. ⚠️</string>
     <string name="snack_feedback">Благодаря, че ни оценихте!</string>
+    <string name="tooltip_agree">Приемете условията и правилата.</string>
     <string name="tooltip_start_scan">Започнете сканиране.</string>
     <string name="tooltip_network">Информация за мрежата.</string>
+    <string name="tooltip_open_me">Отвори ме 🌐</string>
 </resources>

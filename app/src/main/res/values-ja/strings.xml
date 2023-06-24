@@ -56,7 +56,6 @@
     <string name="faq">よくある質問</string>
     <string name="send_feedback">フィードバックを送信する</string>
     <string name="about">だいたい</string>
-    <string name="open_me">開けてください🌐</string>
     <string name="app_version">バージョン %1$s (%2$d)</string>
     <string name="music">音楽</string>
     <string name="made_in">ルーマニアの❤で作りました！</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">接続タイムアウト。 ⚠️</string>
     <string name="snack_connection_error">接続エラー。 ⚠️</string>
     <string name="snack_feedback">評価していただきありがとうございます!</string>
+    <string name="tooltip_agree">利用規約に同意する。</string>
     <string name="tooltip_start_scan">スキャンを開始する。</string>
     <string name="tooltip_network">ネットワーク情報。</string>
+    <string name="tooltip_open_me">開けてください🌐</string>
 </resources>

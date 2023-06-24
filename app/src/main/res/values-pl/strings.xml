@@ -56,7 +56,6 @@
     <string name="faq">Często zadawane pytania</string>
     <string name="send_feedback">Wyślij opinię</string>
     <string name="about">O</string>
-    <string name="open_me">Otwórz mnie 🌐</string>
     <string name="app_version">Wersja %1$s (%2$d)</string>
     <string name="music">Muzyka</string>
     <string name="made_in">Wykonane z ❤ w Rumunii!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Czas połączenia minął. ⚠️</string>
     <string name="snack_connection_error">Błąd połączenia. ⚠️</string>
     <string name="snack_feedback">Dziękujemy za ocenę nas!</string>
+    <string name="tooltip_agree">Zaakceptuj warunki i postanowienia.</string>
     <string name="tooltip_start_scan">Rozpocznij skanowanie.</string>
     <string name="tooltip_network">Informacje o sieci.</string>
+    <string name="tooltip_open_me">Otwórz mnie 🌐</string>
 </resources>

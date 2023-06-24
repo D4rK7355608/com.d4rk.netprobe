@@ -56,7 +56,6 @@
     <string name="faq">Preguntas más frecuentes</string>
     <string name="send_feedback">Enviar comentarios</string>
     <string name="about">Acerca de</string>
-    <string name="open_me">Ábreme 🌐</string>
     <string name="app_version">Versión %1$s (%2$d)</string>
     <string name="music">Música</string>
     <string name="made_in">Hecho con ❤ en Rumania!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">El tiempo de conexión expiro. ⚠️</string>
     <string name="snack_connection_error">Error de conexión. ⚠️</string>
     <string name="snack_feedback">¡Gracias por calificarnos!</string>
+    <string name="tooltip_agree">Aceptar los términos y condiciones.</string>
     <string name="tooltip_start_scan">Iniciar escaneo.</string>
     <string name="tooltip_network">Información de la red.</string>
+    <string name="tooltip_open_me">Ábreme 🌐</string>
 </resources>

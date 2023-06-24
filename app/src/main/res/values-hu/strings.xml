@@ -56,7 +56,6 @@
     <string name="faq">GYIK</string>
     <string name="send_feedback">Visszajelzés küldése</string>
     <string name="about">Ról ről</string>
-    <string name="open_me">Nyiss ki 🌐</string>
     <string name="app_version">Verzió %1$s (%2$d)</string>
     <string name="music">Zene</string>
     <string name="made_in">❤-vel készült Romániában!</string>
@@ -122,6 +121,8 @@
     <string name="snack_connection_timeout">Kapcsolat időtúllépés. ⚠️</string>
     <string name="snack_connection_error">Kapcsolati hiba. ⚠️</string>
     <string name="snack_feedback">Köszönjük, hogy értékelt minket!</string>
+    <string name="tooltip_agree">Elfogadom a feltételeket és az általános szerződési feltételeket.</string>
     <string name="tooltip_start_scan">Szkennelés indítása.</string>
     <string name="tooltip_network">Hálózati információk.</string>
+    <string name="tooltip_open_me">Nyiss ki 🌐</string>
 </resources>
