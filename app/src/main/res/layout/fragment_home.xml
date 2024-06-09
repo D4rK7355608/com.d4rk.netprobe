@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <me.zhanghai.android.fastscroll.FastScrollScrollView
+    <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -99,7 +99,7 @@
                     ads:adUnitId="ca-app-pub-5294151573817700/6563108883"/>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-    </me.zhanghai.android.fastscroll.FastScrollScrollView>
+    </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         style="@style/Widget.Material3.FloatingActionButton.Secondary"
         android:id="@+id/floating_action_button_shortcut"

@@ -11,37 +11,32 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.d4rk.netprobe.R
 import com.d4rk.netprobe.databinding.FragmentHomeBinding
-import com.d4rk.netprobe.ui.viewmodel.ViewModel
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.net.Inet4Address
-import java.net.Socket
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.NetworkInterface
+import java.net.Socket
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.util.Enumeration
+
 class HomeFragment : Fragment() {
-    private lateinit var viewModel: ViewModel
     private lateinit var binding: FragmentHomeBinding
     private var serverCount = 0
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
         binding.adView.loadAd(AdRequest.Builder().build())
         binding.editTextIp.setText(R.string.default_ip_address)
