@@ -158,14 +158,6 @@
 
 
 
-
-
-
-
-
-
-
-
     <string name="ip_address">IP Address</string>
     <string name="your_ip">Your public IP is: %1$s</string>
     <string name="scan">Scan</string>
@@ -179,26 +171,13 @@
     <string name="server">Server</string>
     <string name="web_page">Web Page</string>
     <string name="unknown">Unknown</string>
-    <string name="subscribe_to_beta">Subscribe to beta updates</string>
-    <string name="changelog">Changelog</string>
-    <string name="privacy_and_security">Privacy and security</string>
-    <string name="more">More</string>
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-
     <string name="content_description_radio">Show radio information.</string>
-    <string name="notification_settings">Notification settings</string>
-    <string name="snack_unable_to_open_google_play_store">Unable to open Google Play Store.</string>
     <string name="snack_enter_ip">Please enter a valid IP address or web address. ⚠️</string>
     <string name="snack_invalid_ip_address">Invalid IP address or web address. ⚠️</string>
     <string name="snack_connection_timeout">Connection timeout. ⚠️</string>
     <string name="snack_connection_error">Connection error. ⚠️</string>
-    <string name="snack_feedback">Thanks for rating us!</string>
-    <string name="tooltip_agree">Accept the terms and conditions.</string>
-    <string name="tooltip_start_scan">Start scanning.</string>
-    <string name="tooltip_network">Network information.</string>
-    <string name="tooltip_open_me">Open me 🌐</string>
-
     <string name="ip_not_found">IP not found</string>
 </resources>
