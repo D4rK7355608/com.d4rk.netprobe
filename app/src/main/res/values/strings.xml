@@ -10,34 +10,10 @@
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
     <string name="agree">Agree</string>
 
-    <string name="no_carts_available">No carts available</string>
-    <string name="add_new_cart">Add new cart</string>
-    <string name="cart_name">Cart name</string>
-    <string name="shopping_cart">Shopping cart</string>
-    <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
-    <string name="created_on">Created on %1$s</string>
-    <string name="delete_cart_title">Delete Cart</string>
-    <string name="delete_cart_message">Are you sure you want to delete this cart?</string>
-    <string name="delete_cart_warning">Deleting this cart will permanently remove all items from \"%s\" and cannot be undone.</string>
-    <string name="snackbar_cart_deleted_success">Cart deleted successfully!</string>
-    <string name="snackbar_cart_deleted_error">Error deleting cart. Please try again.</string>
     <string name="close">Close?</string>
     <string name="summary_close">Are you sure you want to exit?</string>
     <string name="snack_network_error">Network error occurred while checking for updates</string>
     <string name="snack_general_error">An error occurred while checking for updates</string>
-
-    <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
-    <string name="item_name">Item name</string>
-    <string name="enter_item_name">Enter item name</string>
-    <string name="item_price">Item price</string>
-    <string name="enter_item_price">Enter item price</string>
-    <string name="quantity">Quantity</string>
-    <string name="enter_quantity">Enter quantity</string>
-    <string name="dialog_info_cart_item">To ensure a seamless checkout experience, please provide details about the items you\'re adding to your cart</string>
-    <string name="total">Total</string>
-    <string name="delete_cart_item_title">Delete Cart Item</string>
-    <string name="delete_cart_item_message">Are you sure you want to delete this item?</string>
-    <string name="delete_cart_item_warning">You are about to delete "%s" from your cart.</string>
 
     <string name="settings">Settings</string>
 
@@ -61,14 +37,6 @@
     <string name="summary_preference_settings_language">Changes the language used in the app</string>
     <string name="dialog_language_subtitle">Select your preferred language</string>
     <string name="dialog_info_language">Personalize your experience with your preferred language. Any language changes you make take effect right away, ensuring a seamless experience in your chosen language</string>
-
-    <string name="cart_settings">Cart settings</string>
-    <string name="summary_preference_settings_cart">Manage how your cart behaves</string>
-
-    <string name="currency">Currency</string>
-    <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
-    <string name="dialog_currency_subtitle">Select your preferred currency</string>
-    <string name="dialog_info_currency">This currency selection will be utilized across the platform for displaying product prices, processing transactions, and providing a more personalized shopping experience</string>
 
     <string name="notifications">Notifications</string>
     <string name="summary_preference_settings_notifications">Manage app notifications</string>
@@ -112,6 +80,8 @@
     <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
     <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
+    <string name="read_phone_state">Read phone state [READ_PHONE_STATE]</string>
+    <string name="summary_preference_permissions_read_phone_state">Allows the app to access information about your phone\'s state, like your phone number and network details. This may be needed for features like verifying your number or managing calls within the app. Be cautious granting this permission, as it could be misused to track your calls or collect sensitive data.</string>
 
     <string name="ads">Ads</string>
     <string name="summary_preference_settings_ads">Control how we use your information to show you relevant ads</string>
@@ -121,7 +91,7 @@
     <string name="summary_ads">See ads that are relevant to you. Manage the information used to show personalized ads based on your app activity. You can always turn off personalization here.\n</string>
 
     <string name="usage_and_diagnostics">Usage and diagnostics</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Share data to help improve Cart Calculator</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Share data to help improve Net Probe</string>
     <string name="summary_usage_and_diagnostics">Help improve your experience by automatically sending diagnostic, device, and app usage data to us. This will help improve app performance, stability, and other enhancements. Some aggregate data will also help our apps.\n\nThis is general information about your device and how you use our apps (such as battery level, system and app activity, and errors). The data will be used to improve our apps\n\nTurning off this feature doesn\'t affect your device\'s ability to send the information needed for essential services such as app updates and security.\n</string>
 
     <string name="legal">Legal</string>
@@ -130,7 +100,7 @@
     <string name="license">License</string>
 
     <string name="about">About</string>
-    <string name="summary_preference_settings_about">Learn more about Cart Calculator</string>
+    <string name="summary_preference_settings_about">Learn more about Net Probe</string>
 
     <string name="app_info">App info</string>
     <string name="app_build_version">Application build version</string>
@@ -196,7 +166,6 @@
 
 
 
-    <string name="home">Home</string>
     <string name="ip_address">IP Address</string>
     <string name="your_ip">Your public IP is: %1$s</string>
     <string name="scan">Scan</string>
@@ -210,31 +179,14 @@
     <string name="server">Server</string>
     <string name="web_page">Web Page</string>
     <string name="unknown">Unknown</string>
-    <string name="ip_not_fount">IP Address not found…</string>
-    <string name="theme">Theme</string>
-    <string name="auto_battery_mode">Auto Battery Dark Mode</string>
-    <string name="firebase">Firebase</string>
-    <string name="app_updates">App updates</string>
-    <string name="check_for_updates">Check for updates…</string>
     <string name="subscribe_to_beta">Subscribe to beta updates</string>
     <string name="changelog">Changelog</string>
     <string name="privacy_and_security">Privacy and security</string>
     <string name="more">More</string>
-    <string name="share_using">Share using…</string>
-    <string name="share_subject">Try it now!!!</string>
-    <string name="more_apps">More apps…</string>
-    <string name="support_me">Support me</string>
-    <string name="info">Info</string>
-    <string name="mail_to_dev">Email developer 📧</string>
-    <string name="send_feedback">Send feedback</string>
-    <string name="app_version">Version %1$s (%2$d)</string>
-    <string name="music">Music</string>
-    <string name="made_in">Made with ❤ in Romania!</string>
-    <string name="copyright">© Copyright %1$s, made by D4rK!</string>
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="read_phone_state">Read phone state [READ_PHONE_STATE]</string>
+
     <string name="content_description_radio">Show radio information.</string>
     <string name="notification_settings">Notification settings</string>
     <string name="snack_unable_to_open_google_play_store">Unable to open Google Play Store.</string>
@@ -247,4 +199,6 @@
     <string name="tooltip_start_scan">Start scanning.</string>
     <string name="tooltip_network">Network information.</string>
     <string name="tooltip_open_me">Open me 🌐</string>
+
+    <string name="ip_not_found">IP not found</string>
 </resources>

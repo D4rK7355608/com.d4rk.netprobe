@@ -6,6 +6,7 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
     id("com.google.android.gms.oss-licenses-plugin")
+    id("com.google.devtools.ksp")
 }
 android {
     compileSdk = 34
@@ -14,8 +15,8 @@ android {
         applicationId = "com.d4rk.netprobe"
         minSdk = 26
         targetSdk = 34
-        versionCode = 42
-        versionName = "1.0.0"
+        versionCode = 10
+        versionName = "2.0.0"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -94,6 +95,8 @@ dependencies {
     implementation(libs.firebase.perf)
 
     // Google
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     implementation(libs.play.services.ads)
     implementation(libs.billing)
     implementation(libs.material)

@@ -3,10 +3,12 @@ agp = "8.4.1"
 appcompat = "1.7.0"
 appUpdateKtx = "2.1.0"
 composeBom = "2024.05.00"
+google-devtools-ksp = "1.9.23-1.0.20"
 coreKtx = "1.13.1"
 billing = "7.0.0"
 datastoreCore = "1.1.1"
 graphicsShapes = "1.0.0-beta01"
+hilt = "2.50"
 lifecycleCommonJava8 = "2.8.1"
 lifecycleLivedataKtx = "2.8.1"
 lifecycleProcess = "2.8.1"
@@ -66,6 +68,8 @@ firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx"
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 firebase-perf = { module = "com.google.firebase:firebase-perf" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -85,3 +89,4 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 googlePlayServices = { id = "com.google.gms.google-services", version.ref = "google-services" }
 googleOssServices = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "google-oss-services" }
 googleFirebase = { id = "com.google.firebase.crashlytics", version.ref = "google-firebase-crashlytics" }
+devToolsKsp = { id = "com.google.devtools.ksp", version.ref = "google-devtools-ksp" }
