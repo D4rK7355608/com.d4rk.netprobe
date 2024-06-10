@@ -43,8 +43,7 @@ fun StartupComposable() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
         LargeTopAppBar(title = { Text(stringResource(R.string.welcome)) } ,
-                       scrollBehavior = scrollBehavior
-        )
+                       scrollBehavior = scrollBehavior)
     }) { innerPadding ->
         Box(
             modifier = Modifier

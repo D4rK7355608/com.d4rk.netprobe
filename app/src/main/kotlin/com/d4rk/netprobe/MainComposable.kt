@@ -69,51 +69,49 @@ fun MainComposable() {
             Spacer(modifier = Modifier.height(16.dp))
             drawerItems.forEachIndexed { index , item ->
                 val title = stringResource(item.title)
-                NavigationDrawerItem(
-                    label = { Text(text = title) } ,
-                    selected = index == selectedItemIndex ,
-                    onClick = {
-                        when (item.title) {
+                NavigationDrawerItem(label = { Text(text = title) } ,
+                                     selected = index == selectedItemIndex ,
+                                     onClick = {
+                                         when (item.title) {
 
-                            R.string.settings -> {
-                                Utils.openActivity(
-                                    context , SettingsActivity::class.java
-                                )
-                            }
+                                             R.string.settings -> {
+                                                 Utils.openActivity(
+                                                     context , SettingsActivity::class.java
+                                                 )
+                                             }
 
-                            R.string.help_and_feedback -> {
-                                Utils.openActivity(
-                                    context , HelpActivity::class.java
-                                )
-                            }
+                                             R.string.help_and_feedback -> {
+                                                 Utils.openActivity(
+                                                     context , HelpActivity::class.java
+                                                 )
+                                             }
 
-                            R.string.updates -> {
-                                Utils.openUrl(
-                                    context ,
-                                    "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
-                                )
-                            }
+                                             R.string.updates -> {
+                                                 Utils.openUrl(
+                                                     context ,
+                                                     "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
+                                                 )
+                                             }
 
-                            R.string.share -> {
-                                Utils.shareApp(context)
-                            }
-                        }
-                        scope.launch {
-                            drawerState.close()
-                        }
-                    } ,
-                    icon = {
-                        Icon(
-                            item.selectedIcon , contentDescription = title
-                        )
-                    } ,
-                    badge = {
-                        item.badgeCount?.let {
-                            Text(text = item.badgeCount.toString())
-                        }
-                    } ,
-                    modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
-                )
+                                             R.string.share -> {
+                                                 Utils.shareApp(context)
+                                             }
+                                         }
+                                         scope.launch {
+                                             drawerState.close()
+                                         }
+                                     } ,
+                                     icon = {
+                                         Icon(
+                                             item.selectedIcon , contentDescription = title
+                                         )
+                                     } ,
+                                     badge = {
+                                         item.badgeCount?.let {
+                                             Text(text = item.badgeCount.toString())
+                                         }
+                                     } ,
+                                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding))
             }
         }
 

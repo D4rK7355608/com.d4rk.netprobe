@@ -20,22 +20,22 @@ android {
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
-                "en",
-                "de",
-                "es",
-                "fr",
-                "hi",
-                "hu",
-                "in",
-                "it",
-                "ja",
-                "ro",
-                "ru",
-                "tr",
-                "sv",
-                "bg",
-                "pl",
-                "uk"
+            "en" ,
+            "de" ,
+            "es" ,
+            "fr" ,
+            "hi" ,
+            "hu" ,
+            "in" ,
+            "it" ,
+            "ja" ,
+            "ro" ,
+            "ru" ,
+            "tr" ,
+            "sv" ,
+            "bg" ,
+            "pl" ,
+            "uk"
         )
         vectorDrawables {
             useSupportLibrary = true
@@ -49,7 +49,7 @@ android {
             isDebuggable = false
             versionNameSuffix = null
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
             )
         }
         debug {
@@ -57,7 +57,7 @@ android {
             isDebuggable = true
             versionNameSuffix = null
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
             )
         }
     }

@@ -156,8 +156,6 @@
     <string name="learn_more">Learn more</string>
 
 
-
-
     <string name="ip_address">IP Address</string>
     <string name="your_ip">Your public IP is: %1$s</string>
     <string name="scan">Scan</string>

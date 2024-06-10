@@ -59,8 +59,7 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
                                )
                            }
                        } ,
-                       scrollBehavior = scrollBehavior
-        )
+                       scrollBehavior = scrollBehavior)
     }) { innerPadding ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
