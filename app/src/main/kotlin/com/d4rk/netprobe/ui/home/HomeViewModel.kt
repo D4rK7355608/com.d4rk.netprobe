@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.netprobe.R
+import com.d4rk.netprobe.data.db.table.HomeScreenState
 import com.d4rk.netprobe.data.db.table.ScanResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -31,30 +32,33 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    application : Application
+    application: Application
 ) : AndroidViewModel(application) {
 
     private val context = getApplication<Application>()
 
-    private val _ipAddress = MutableStateFlow("")
-    val ipAddress : StateFlow<String> = _ipAddress.asStateFlow()
+    private val _state = MutableStateFlow(HomeScreenState())
+    val state: StateFlow<HomeScreenState> = _state.asStateFlow()
 
     private val _snackbarEvent = MutableSharedFlow<String>()
-    val snackbarEvent : SharedFlow<String> = _snackbarEvent.asSharedFlow()
+    val snackbarEvent: SharedFlow<String> = _snackbarEvent.asSharedFlow()
 
 
     init {
-        _ipAddress.value = getIPAddress() ?: context.getString(R.string.ip_not_found)
+        _state.value = _state.value.copy(
+            ipAddress = getIPAddress() ?: context.getString(R.string.ip_not_found)
+        )
     }
 
     private var serverCount = 0
 
-    fun scanIpAddress(ipAddress : String , onResult : (ScanResult) -> Unit) {
+    fun scanIpAddress(ipAddress: String) {
+        _state.value = _state.value.copy(isLoading = true)
         viewModelScope.launch(Dispatchers.IO) {
-            val responseCode : String
-            val ipFunctions = mutableMapOf<String , String>()
-            val isCamera : Boolean
-            val responseTime : Long
+            val responseCode: String
+            val ipFunctions = mutableMapOf<String, String>()
+            val isCamera: Boolean
+            val responseTime: Long
             try {
                 val startTime = System.currentTimeMillis()
                 val socket = Socket()
@@ -62,20 +66,20 @@ class HomeViewModel @Inject constructor(
                 if (inetAddress.isLoopbackAddress || inetAddress.hostAddress == ipAddress || inetAddress.hostAddress == "192.168.1.100") {
                     throw IllegalArgumentException("Invalid IP address")
                 }
-                socket.connect(InetSocketAddress(inetAddress , 80) , 5000)
+                socket.connect(InetSocketAddress(inetAddress, 80), 5000)
                 responseTime = System.currentTimeMillis() - startTime
                 if (socket.isConnected) {
                     responseCode = socket.getInputStream().read().toString()
                     isCamera = withContext(Dispatchers.IO) {
                         val reader =
-                                BufferedReader(InputStreamReader(socket.getInputStream() , "UTF-8"))
+                            BufferedReader(InputStreamReader(socket.getInputStream(), "UTF-8"))
                         val response = StringBuilder()
-                        var line : String? = reader.readLine()
+                        var line: String? = reader.readLine()
                         while (line != null) {
                             response.append(line)
                             line = reader.readLine()
                         }
-                        response.contains("camera" , ignoreCase = true)
+                        response.contains("camera", ignoreCase = true)
                     }
                     ipFunctions[ipAddress] = when (responseCode.toInt()) {
                         200 -> context.getString(R.string.web_page)
@@ -84,42 +88,47 @@ class HomeViewModel @Inject constructor(
                         else -> context.getString(R.string.server)
                     }
                     if (isCamera) {
-                        serverCount ++
+                        serverCount++
                     }
                     withContext(Dispatchers.Main) {
-                        onResult(
-                            ScanResult(
-                                ipAddress ,
-                                responseCode ,
-                                ipFunctions[ipAddress] ?: context.getString(R.string.unknown) ,
-                                responseTime ,
-                                isCamera ,
+                        _state.value = _state.value.copy(
+                            isLoading = false,
+                            scanResult = ScanResult(
+                                ipAddress,
+                                responseCode,
+                                ipFunctions[ipAddress] ?: context.getString(R.string.unknown),
+                                responseTime,
+                                isCamera,
                                 serverCount
                             )
                         )
                     }
                 }
                 socket.close()
-            } catch (e : UnknownHostException) {
+            } catch (e: UnknownHostException) {
                 _snackbarEvent.emit(context.getString(R.string.snack_invalid_ip_address))
-            } catch (e : IllegalArgumentException) {
+                _state.value = _state.value.copy(isLoading = false)
+            } catch (e: IllegalArgumentException) {
                 _snackbarEvent.emit(context.getString(R.string.snack_invalid_ip_address))
-            } catch (e : SocketTimeoutException) {
+                _state.value = _state.value.copy(isLoading = false)
+            } catch (e: SocketTimeoutException) {
                 _snackbarEvent.emit(context.getString(R.string.snack_connection_timeout))
-            } catch (e : IOException) {
+                _state.value = _state.value.copy(isLoading = false)
+            } catch (e: IOException) {
                 _snackbarEvent.emit(context.getString(R.string.snack_connection_error))
+                _state.value = _state.value.copy(isLoading = false)
             }
         }
     }
 
-    private fun getIPAddress() : String? {
-        val interfaces : Enumeration<NetworkInterface> = NetworkInterface.getNetworkInterfaces()
+    private fun getIPAddress(): String? {
+        val interfaces: Enumeration<NetworkInterface> = NetworkInterface.getNetworkInterfaces()
         while (interfaces.hasMoreElements()) {
-            val networkInterface : NetworkInterface = interfaces.nextElement()
-            val addresses : Enumeration<InetAddress> = networkInterface.inetAddresses
+            val networkInterface: NetworkInterface = interfaces.nextElement()
+            val addresses: Enumeration<InetAddress> = networkInterface.inetAddresses
             while (addresses.hasMoreElements()) {
-                val address : InetAddress = addresses.nextElement()
-                if (! address.isLinkLocalAddress && ! address.isLoopbackAddress && address is Inet4Address) {
+                val address: InetAddress = addresses.nextElement()
+                if (!address.isLinkLocalAddress && !address.isLoopbackAddress && address is Inet4Address) {
                     return address.hostAddress
                 }
             }

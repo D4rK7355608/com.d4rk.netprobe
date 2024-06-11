@@ -114,7 +114,6 @@ fun MainComposable() {
                                      modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding))
             }
         }
-
     } , content = {
         Scaffold(
             topBar = {
