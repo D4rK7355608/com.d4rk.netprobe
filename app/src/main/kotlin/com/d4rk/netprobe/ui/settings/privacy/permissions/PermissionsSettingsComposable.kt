@@ -34,8 +34,7 @@ fun PermissionsSettingsComposable(activity : PermissionsSettingsActivity) {
                     Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
                 )
             }
-        } , scrollBehavior = scrollBehavior
-        )
+        } , scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier

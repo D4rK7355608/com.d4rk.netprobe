@@ -250,12 +250,10 @@ fun SwitchPreferenceItemWithDivider(
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f) ,
             thickness = 1.dp
         )
-        Switch(
-            checked = checked , onCheckedChange = { isChecked ->
-                onCheckedChange(isChecked)
-                onSwitchClick(isChecked)
-            } , modifier = Modifier.padding(16.dp)
-        )
+        Switch(checked = checked , onCheckedChange = { isChecked ->
+            onCheckedChange(isChecked)
+            onSwitchClick(isChecked)
+        } , modifier = Modifier.padding(16.dp))
 
     }
 }

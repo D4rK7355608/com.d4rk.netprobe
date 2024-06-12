@@ -125,17 +125,13 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                                        val localeIntent =
                                                Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
                                                    Uri.fromParts(
-                                                       "package" ,
-                                                       context.packageName ,
-                                                       null
+                                                       "package" , context.packageName , null
                                                    )
                                                )
                                        val detailsIntent =
                                                Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
                                                    Uri.fromParts(
-                                                       "package" ,
-                                                       context.packageName ,
-                                                       null
+                                                       "package" , context.packageName , null
                                                    )
                                                )
                                        when {

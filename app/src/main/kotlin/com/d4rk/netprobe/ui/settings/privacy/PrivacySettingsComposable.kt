@@ -42,8 +42,7 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                )
                            }
                        } ,
-                       scrollBehavior = scrollBehavior
-        )
+                       scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier

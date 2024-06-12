@@ -69,8 +69,7 @@ fun SupportComposable(activity : SupportActivity) {
                     Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
                 )
             }
-        } , scrollBehavior = scrollBehavior
-        )
+        } , scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         Box(
             modifier = Modifier

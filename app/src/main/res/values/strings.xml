@@ -175,6 +175,7 @@
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="scanner">Scanner</string>
     <string name="content_description_radio">Show radio information.</string>
     <string name="snack_enter_ip">Please enter a valid IP address or web address. ⚠️</string>
     <string name="snack_invalid_ip_address">Invalid IP address or web address. ⚠️</string>
