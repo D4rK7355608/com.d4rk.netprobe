@@ -50,14 +50,12 @@ import kotlinx.coroutines.withContext
 import java.net.HttpURLConnection
 import java.net.InetAddress
 import java.net.URL
-import kotlin.math.floor
 
 @Composable
 fun SpeedTestComposable() {
     val coroutineScope = rememberCoroutineScope()
     val downloadSpeed = remember { mutableFloatStateOf(0f) }
     val maxSpeed = remember { mutableFloatStateOf(0f) }
-    val rememberProgress = remember { mutableFloatStateOf(0f) } // This value will keep in mind the last progress. when the next scan will happen will add first, this value to the scan. by default is 0
     val ping = remember { mutableStateOf<String?>(null) }
     var testRunning by remember { mutableStateOf(false) }
     var currentScan by remember { mutableIntStateOf(0) }
@@ -74,10 +72,10 @@ fun SpeedTestComposable() {
 
     val uiState = UiState(
         inProgress = testRunning,
-        arcValue = rememberProgress.floatValue, // We update the UI state with the progress.
+        arcValue = speedSmooth.value,
         speed = "%.1f".format(speedSmooth.value),
         ping = ping.value ?: "-",
-        maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-",
+        maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-"
     )
 
     Column(
@@ -93,7 +91,7 @@ fun SpeedTestComposable() {
                 .fillMaxWidth()
                 .aspectRatio(1f)
         ) {
-            CircularSpeedIndicator(uiState.arcValue, 240f) // This is the progress bar, so, we will add the progress. This is responsible to show the user the progress bar... progressing.
+            CircularSpeedIndicator(uiState.arcValue, 240f)
             StartButton(isEnabled = !uiState.inProgress && !testRunning) {
                 testRunning = true
                 coroutineScope.launch {
@@ -153,7 +151,7 @@ suspend fun downloadFileWithProgress(
             onProgressUpdate(downloadedBytes, totalBytes)
         }
     }
-    data // Return the downloaded data if needed
+    data
 }
 
 fun getPing(host: String): String {
@@ -288,15 +286,16 @@ fun DrawScope.drawLines(
     progress: Float, maxValue: Float, numberOfLines: Int = 40, color: Color
 ) {
     val oneRotation = maxValue / numberOfLines
-    val startValue = if (progress == 0f) 0 else floor(progress * numberOfLines).toInt() + 1
+    val startValue = (progress / 100f) * numberOfLines
 
-    for (i in startValue..numberOfLines) {
+    for (i in 0 until numberOfLines) {
+        val alpha = if (i >= startValue) 1f else 0f
         rotate(i * oneRotation + (180 - maxValue) / 2) {
             drawLine(
-                color,
+                color.copy(alpha = alpha),
                 Offset(if (i % 5 == 0) 80f else 30f, size.height / 2),
                 Offset(0f, size.height / 2),
-                8f,
+                6f,
                 StrokeCap.Round
             )
         }
