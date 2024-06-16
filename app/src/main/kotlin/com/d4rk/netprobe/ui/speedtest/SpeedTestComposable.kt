@@ -47,8 +47,10 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.database.table.UiState
 import com.d4rk.netprobe.ui.animation.SpeedSmoothAnimation
 import com.d4rk.netprobe.utils.bounceClick
@@ -74,6 +76,7 @@ fun SpeedTestComposable() {
     val testUrl =
         "https://github.com/D4rK7355608/GoogleProductSansFont/releases/download/v2.0_r1/GoogleProductSansFont-v2.0_r1.zip"
     val pingHost = "www.google.com"
+    val checkingString = stringResource(id = R.string.checking)
 
     LaunchedEffect(downloadSpeed.floatValue, scanProgresses) {
         speedSmooth.animateTo(downloadSpeed.floatValue)
@@ -107,7 +110,7 @@ fun SpeedTestComposable() {
                 testRunning = true
                 coroutineScope.launch {
                     if (currentScan == 0) {
-                        ping.value = "Checking..."
+                        ping.value = checkingString
                         withContext(Dispatchers.IO) {
                             ping.value = getPing(pingHost)
                             wifiStrength.value = getWifiStrength(context)
@@ -220,11 +223,11 @@ fun SpeedValue(value: String) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("DOWNLOAD")
+        Text(stringResource(id = R.string.download))
         Text(
             text = value, style = MaterialTheme.typography.titleLarge
         )
-        Text("mbps")
+        Text(stringResource(id = R.string.mbps))
     }
 }
 
@@ -239,7 +242,7 @@ fun StartButton(isEnabled: Boolean, onClick: () -> Unit) {
         shape = RoundedCornerShape(24.dp),
     ) {
         Text(
-            text = "START", modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)
+            text = stringResource(id = R.string.start), modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)
         )
     }
 }
@@ -263,11 +266,11 @@ fun AdditionalInfo(ping: String, wifiStrength: String, maxSpeed: String) {
             .fillMaxWidth()
             .height(IntrinsicSize.Min)
     ) {
-        InfoColumn(title = "PING", value = ping)
+        InfoColumn(title = stringResource(id = R.string.ping), value = ping)
         VerticalDivider()
-        InfoColumn(title = "Wi-Fi Strength", value = wifiStrength)
+        InfoColumn(title = stringResource(id = R.string.wifi_strength), value = wifiStrength)
         VerticalDivider()
-        InfoColumn(title = "MAX SPEED", value = maxSpeed)
+        InfoColumn(title = stringResource(id = R.string.max_speed), value = maxSpeed)
     }
 }
 

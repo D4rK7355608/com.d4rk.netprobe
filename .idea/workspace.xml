@@ -13,17 +13,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Added the new speed test functionality, still in alpha stage, not sable">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/database/table/UiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/database/table/UiState.kt" afterDir="false" />
+    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Updated the UI and fixed the progress bar">
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -451,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718569767117</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated the UI and fixed the progress bar">
+      <option name="closed" value="true" />
+      <created>1718572530012</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718572530012</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,6 +481,7 @@
     <MESSAGE value="UI overhaul: implemented settings, help, and main section. Project structure refactored and code cleaned." />
     <MESSAGE value="Added the banner image" />
     <MESSAGE value="Added the new speed test functionality, still in alpha stage, not sable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the new speed test functionality, still in alpha stage, not sable" />
+    <MESSAGE value="Updated the UI and fixed the progress bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the UI and fixed the progress bar" />
   </component>
 </project>

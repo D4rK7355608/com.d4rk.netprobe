@@ -159,6 +159,12 @@
     <string name="ip_address">IP Address</string>
     <string name="placeholder_ip_address">Enter IP Address or link</string>
     <string name="speed_test">Speed Test</string>
+    <string name="start">Start</string>
+    <string name="checking">Checking…</string>
+    <string name="ping">Ping</string>
+    <string name="max_speed">Max Speed</string>
+    <string name="wifi_strength">Wi-Fi Strength</string>
+    <string name="download">Download</string>
     <string name="content_description_speed_test">Run a speed test</string>
     <string name="your_ip">Your public IP is: %1$s</string>
     <string name="scan">Scan</string>
