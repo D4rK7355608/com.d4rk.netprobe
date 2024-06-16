@@ -1,5 +1,12 @@
 package com.d4rk.netprobe.ui.speedtest
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
+import android.net.wifi.WifiManager
+import android.os.Build
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -39,6 +46,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.d4rk.netprobe.data.database.table.UiState
@@ -57,9 +65,11 @@ fun SpeedTestComposable() {
     val downloadSpeed = remember { mutableFloatStateOf(0f) }
     val maxSpeed = remember { mutableFloatStateOf(0f) }
     val ping = remember { mutableStateOf<String?>(null) }
+    val wifiStrength = remember { mutableStateOf<Int?>(null) }
     var testRunning by remember { mutableStateOf(false) }
     var currentScan by remember { mutableIntStateOf(0) }
     val speedSmooth = remember { SpeedSmoothAnimation() }
+    val context = LocalContext.current
     val scanProgresses = remember { mutableStateListOf(0f, 0f, 0f, 0f, 0f) }
     val testUrl =
         "https://github.com/D4rK7355608/GoogleProductSansFont/releases/download/v2.0_r1/GoogleProductSansFont-v2.0_r1.zip"
@@ -75,6 +85,7 @@ fun SpeedTestComposable() {
         arcValue = speedSmooth.value,
         speed = "%.1f".format(speedSmooth.value),
         ping = ping.value ?: "-",
+        wifiStrength = if (wifiStrength.value != null) (wifiStrength.value.toString() + " dBm") else "-",
         maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-"
     )
 
@@ -99,6 +110,7 @@ fun SpeedTestComposable() {
                         ping.value = "Checking..."
                         withContext(Dispatchers.IO) {
                             ping.value = getPing(pingHost)
+                            wifiStrength.value = getWifiStrength(context)
                         }
                     }
 
@@ -122,7 +134,7 @@ fun SpeedTestComposable() {
             }
             SpeedValue(uiState.speed)
         }
-        AdditionalInfo(ping = ping.value ?: "-", maxSpeed = uiState.maxSpeed)
+        AdditionalInfo(ping = ping.value ?: "-", wifiStrength = uiState.wifiStrength, maxSpeed = uiState.maxSpeed)
     }
 }
 
@@ -171,6 +183,36 @@ fun getPing(host: String): String {
     }
 }
 
+fun getWifiStrength(context: Context): Int {
+    val wifiManager = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+    val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    if (wifiManager.isWifiEnabled) {
+        val networkRequest = NetworkRequest.Builder()
+            .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+            .build()
+        var rssiStrength = -1
+        connectivityManager.registerNetworkCallback(
+            networkRequest,
+            object : ConnectivityManager.NetworkCallback() {
+                override fun onAvailable(network: Network) {
+                    val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
+                    rssiStrength = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        networkCapabilities?.signalStrength ?: -1
+                    } else {
+                        @Suppress("DEPRECATION")
+                        val rssi = wifiManager.connectionInfo.rssi
+                        @Suppress("DEPRECATION")
+                        WifiManager.calculateSignalLevel(rssi, 5)
+                    }
+                }
+            })
+
+        return rssiStrength
+    } else {
+        return -1
+    }
+}
+
 @Composable
 fun SpeedValue(value: String) {
     Column(
@@ -203,7 +245,7 @@ fun StartButton(isEnabled: Boolean, onClick: () -> Unit) {
 }
 
 @Composable
-fun AdditionalInfo(ping: String, maxSpeed: String) {
+fun AdditionalInfo(ping: String, wifiStrength: String, maxSpeed: String) {
     @Composable
     fun RowScope.InfoColumn(title: String, value: String) {
         Column(
@@ -222,6 +264,8 @@ fun AdditionalInfo(ping: String, maxSpeed: String) {
             .height(IntrinsicSize.Min)
     ) {
         InfoColumn(title = "PING", value = ping)
+        VerticalDivider()
+        InfoColumn(title = "Wi-Fi Strength", value = wifiStrength)
         VerticalDivider()
         InfoColumn(title = "MAX SPEED", value = maxSpeed)
     }
