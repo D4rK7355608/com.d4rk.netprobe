@@ -31,8 +31,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.store.DataStore
-import com.d4rk.netprobe.dialogs.LanguageDialog
+import com.d4rk.netprobe.data.datastore.DataStore
+import com.d4rk.netprobe.ui.dialogs.LanguageDialog
 import com.d4rk.netprobe.ui.settings.display.theme.ThemeSettingsActivity
 import com.d4rk.netprobe.utils.PreferenceCategoryItem
 import com.d4rk.netprobe.utils.PreferenceItem

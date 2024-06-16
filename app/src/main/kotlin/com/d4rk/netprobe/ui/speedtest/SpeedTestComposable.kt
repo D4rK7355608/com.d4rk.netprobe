@@ -1,10 +1,5 @@
 package com.d4rk.netprobe.ui.speedtest
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.AnimationVector1D
-import androidx.compose.animation.core.CubicBezierEasing
-import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.keyframes
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.FilledTonalButton
@@ -27,9 +21,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -40,127 +38,181 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.dp
-import com.d4rk.netprobe.data.db.table.UiState
+import androidx.compose.ui.unit.sp
+import com.d4rk.netprobe.data.database.table.UiState
+import com.d4rk.netprobe.ui.animation.SpeedSmoothAnimation
 import com.d4rk.netprobe.utils.bounceClick
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.net.HttpURLConnection
+import java.net.InetAddress
+import java.net.URL
 import kotlin.math.floor
-import kotlin.math.max
-import kotlin.math.roundToInt
 
 @Composable
 fun SpeedTestComposable() {
     val coroutineScope = rememberCoroutineScope()
-    val animation = remember { Animatable(0f) }
+    val downloadSpeed = remember { mutableFloatStateOf(0f) }
     val maxSpeed = remember { mutableFloatStateOf(0f) }
+    val progress = remember { mutableFloatStateOf(0f) }
+    val ping = remember { mutableStateOf<String?>("-") }
+    var testRunning by remember { mutableStateOf(false) }
+    val startTime = remember { mutableLongStateOf(0L) }
 
-    LaunchedEffect(animation.value) {
-        maxSpeed.floatValue = max(maxSpeed.floatValue , animation.value * 100f)
+    val speedSmooth = remember { SpeedSmoothAnimation() }
+    LaunchedEffect(downloadSpeed.floatValue) {
+        speedSmooth.animateTo(downloadSpeed.floatValue)
+        if (downloadSpeed.floatValue > maxSpeed.floatValue) {
+            maxSpeed.floatValue = downloadSpeed.floatValue
+        }
     }
 
-    val state = animation.toUiState(maxSpeed.floatValue)
+    val state = UiState(
+        arcValue = progress.floatValue,
+        speed = "%.1f".format(speedSmooth.value),
+        ping = ping.value ?: "-",
+        maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-",
+        inProgress = testRunning
+    )
 
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally ,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-                .fillMaxSize()
-                .safeDrawingPadding() ,
-        verticalArrangement = Arrangement.SpaceBetween ,
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.SpaceBetween
     ) {
         Box(
-            contentAlignment = Alignment.BottomCenter ,
+            contentAlignment = Alignment.BottomCenter,
             modifier = Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(1f)
+                .fillMaxWidth()
+                .aspectRatio(1f)
         ) {
-            CircularSpeedIndicator(state.arcValue , 240f)
-            StartButton(! state.inProgress) {
+            CircularSpeedIndicator(state.arcValue, 240f)
+            StartButton(!state.inProgress && !testRunning) {
+                testRunning = true
                 coroutineScope.launch {
                     maxSpeed.floatValue = 0f
-                    startAnimation(animation)
+                    progress.floatValue = 0f
+                    ping.value = "Checking..."
+                    withContext(Dispatchers.IO) {
+                        ping.value = getPing("www.google.com")
+                    }
+                    startTime.longValue = System.currentTimeMillis()
+
+                    downloadFileWithProgress("https://github.com/D4rK7355608/GoogleProductSansFont/releases/download/v2.0_r1/GoogleProductSansFont-v2.0_r1.zip") { currentBytes, totalBytes ->
+                        progress.floatValue = currentBytes.toFloat() / totalBytes.toFloat()
+                        downloadSpeed.floatValue = calculateSpeed(currentBytes, startTime.longValue)
+                    }
+                    testRunning = false
                 }
             }
             SpeedValue(state.speed)
         }
-        AdditionalInfo(state.ping , state.maxSpeed)
+        AdditionalInfo(ping.value ?: "-", state.maxSpeed)
     }
 }
 
-suspend fun startAnimation(animation : Animatable<Float , AnimationVector1D>) {
-    animation.animateTo(0.84f , keyframes {
-        durationMillis = 9000
-        0f at 0 using CubicBezierEasing(0f , 1.5f , 0.8f , 1f)
-        0.72f at 1000 using CubicBezierEasing(0.2f , - 1.5f , 0f , 1f)
-        0.76f at 2000 using CubicBezierEasing(0.2f , - 2f , 0f , 1f)
-        0.78f at 3000 using CubicBezierEasing(0.2f , - 1.5f , 0f , 1f)
-        0.82f at 4000 using CubicBezierEasing(0.2f , - 2f , 0f , 1f)
-        0.85f at 5000 using CubicBezierEasing(0.2f , - 2f , 0f , 1f)
-        0.89f at 6000 using CubicBezierEasing(0.2f , - 1.2f , 0f , 1f)
-        0.82f at 7500 using LinearOutSlowInEasing
-    })
+fun calculateSpeed(bytesDownloaded: Long, startTime: Long): Float {
+    val timeElapsedMillis = System.currentTimeMillis() - startTime
+    return if (timeElapsedMillis > 0) {
+        ((bytesDownloaded * 8).toFloat() / (timeElapsedMillis * 1000))
+    } else 0f
 }
 
-fun Animatable<Float , AnimationVector1D>.toUiState(maxSpeed : Float) = UiState(
-    arcValue = value ,
-    speed = "%.1f".format(value * 100) ,
-    ping = if (value > 0.2f) "${(value * 15).roundToInt()} ms" else "-" ,
-    maxSpeed = if (maxSpeed > 0f) "%.1f mbps".format(maxSpeed) else "-" ,
-    inProgress = isRunning
-)
+suspend fun downloadFileWithProgress(
+    url: String,
+    onProgressUpdate: (downloadedBytes: Long, totalBytes: Long) -> Unit
+): ByteArray = withContext(Dispatchers.IO) {
+    val connection = URL(url).openConnection() as HttpURLConnection
+    connection.connect()
+
+    val totalBytes = connection.contentLengthLong
+    val data = ByteArray(1024)
+    var downloadedBytes = 0L
+
+    connection.inputStream.buffered().use { input ->
+        while (true) {
+            val bytesRead = input.read(data)
+            if (bytesRead == -1) break
+            downloadedBytes += bytesRead
+            onProgressUpdate(downloadedBytes, totalBytes)
+        }
+    }
+    data
+}
+
+fun getPing(host: String): String {
+    return try {
+        val reachable = InetAddress.getByName(host).isReachable(3000)
+        if (reachable) {
+            val startTime = System.currentTimeMillis()
+            val process = Runtime.getRuntime().exec("/system/bin/ping -c 1 $host")
+            val result = process.waitFor() == 0
+            val endTime = System.currentTimeMillis()
+            if (result) "${endTime - startTime} ms" else "Timeout"
+        } else {
+            "Unreachable"
+        }
+    } catch (e: Exception) {
+        "Error"
+    }
+}
 
 @Composable
-fun SpeedValue(value : String) {
+fun SpeedValue(value: String) {
     Column(
-        Modifier.fillMaxSize() ,
-        verticalArrangement = Arrangement.Center ,
+        Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("DOWNLOAD")
         Text(
-            text = value , style = MaterialTheme.typography.titleLarge
+            text = value, style = MaterialTheme.typography.titleLarge
         )
         Text("mbps")
     }
 }
 
 @Composable
-fun StartButton(isEnabled : Boolean , onClick : () -> Unit) {
+fun StartButton(isEnabled: Boolean, onClick: () -> Unit) {
     FilledTonalButton(
-        onClick = onClick ,
+        onClick = onClick,
         modifier = Modifier
-                .padding(bottom = 24.dp)
-                .bounceClick() ,
-        enabled = isEnabled ,
-        shape = RoundedCornerShape(24.dp) ,
+            .padding(bottom = 24.dp)
+            .bounceClick(),
+        enabled = isEnabled,
+        shape = RoundedCornerShape(24.dp),
     ) {
         Text(
-            text = "START" , modifier = Modifier.padding(horizontal = 24.dp , vertical = 4.dp)
+            text = "START", modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)
         )
     }
 }
 
 @Composable
-fun AdditionalInfo(ping : String , maxSpeed : String) {
-
+fun AdditionalInfo(ping: String, maxSpeed: String) {
     @Composable
-    fun RowScope.InfoColumn(title : String , value : String) {
+    fun RowScope.InfoColumn(title: String, value: String) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally , modifier = Modifier.weight(1f)
+            horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.weight(1f)
         ) {
-            Text(title)
+            Text(title, fontSize = 12.sp)
             Text(
-                value , modifier = Modifier.padding(vertical = 8.dp)
+                value, modifier = Modifier.padding(vertical = 8.dp), fontSize = 16.sp
             )
         }
     }
 
     Row(
         Modifier
-                .fillMaxWidth()
-                .height(IntrinsicSize.Min)
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min)
     ) {
-        InfoColumn(title = "PING" , value = ping)
+        InfoColumn(title = "PING", value = ping)
         VerticalDivider()
-        InfoColumn(title = "MAX SPEED" , value = maxSpeed)
+        InfoColumn(title = "MAX SPEED", value = maxSpeed)
     }
 }
 
@@ -168,59 +220,58 @@ fun AdditionalInfo(ping : String , maxSpeed : String) {
 fun VerticalDivider() {
     Box(
         modifier = Modifier
-                .fillMaxHeight()
-                .background(Color(0xFF414D66))
-                .width(1.dp)
+            .fillMaxHeight()
+            .background(Color.LightGray)
+            .width(1.dp)
     )
 }
 
-
 @Composable
-fun CircularSpeedIndicator(value : Float , angle : Float) {
+fun CircularSpeedIndicator(value: Float, angle: Float) {
     val drawLinesColor = MaterialTheme.colorScheme.secondary
     val drawArcsColor = MaterialTheme.colorScheme.primary
     Canvas(
         modifier = Modifier
-                .fillMaxSize()
-                .padding(40.dp)
+            .fillMaxSize()
+            .padding(40.dp)
     ) {
-        drawLines(value , angle , color = drawLinesColor)
-        drawArcs(value , angle , color = drawArcsColor)
+        drawLines(value, angle, color = drawLinesColor)
+        drawArcs(value, angle, color = drawArcsColor)
     }
 }
 
-fun DrawScope.drawArcs(progress : Float , maxValue : Float , color : Color) {
+fun DrawScope.drawArcs(progress: Float, maxValue: Float, color: Color) {
     val startAngle = 270 - maxValue / 2
     val sweepAngle = maxValue * progress
 
-    val topLeft = Offset(50f , 50f)
-    val size = Size(size.width - 100f , size.height - 100f)
+    val topLeft = Offset(50f, 50f)
+    val size = Size(size.width - 100f, size.height - 100f)
 
     for (i in 0..20) {
         drawArc(
-            color = color.copy(alpha = i / 900f) ,
-            startAngle = startAngle ,
-            sweepAngle = sweepAngle ,
-            useCenter = false ,
-            topLeft = topLeft ,
-            size = size ,
-            style = Stroke(width = 80f + (20 - i) * 20 , cap = StrokeCap.Round)
+            color = color.copy(alpha = i / 900f),
+            startAngle = startAngle,
+            sweepAngle = sweepAngle,
+            useCenter = false,
+            topLeft = topLeft,
+            size = size,
+            style = Stroke(width = 80f + (20 - i) * 20, cap = StrokeCap.Round)
         )
     }
 
     drawArc(
-        color = color ,
-        startAngle = startAngle ,
-        sweepAngle = sweepAngle ,
-        useCenter = false ,
-        topLeft = topLeft ,
-        size = size ,
-        style = Stroke(width = 86f , cap = StrokeCap.Round)
+        color = color,
+        startAngle = startAngle,
+        sweepAngle = sweepAngle,
+        useCenter = false,
+        topLeft = topLeft,
+        size = size,
+        style = Stroke(width = 86f, cap = StrokeCap.Round)
     )
 }
 
 fun DrawScope.drawLines(
-    progress : Float , maxValue : Float , numberOfLines : Int = 40 , color : Color
+    progress: Float, maxValue: Float, numberOfLines: Int = 40, color: Color
 ) {
     val oneRotation = maxValue / numberOfLines
     val startValue = if (progress == 0f) 0 else floor(progress * numberOfLines).toInt() + 1
@@ -228,10 +279,10 @@ fun DrawScope.drawLines(
     for (i in startValue..numberOfLines) {
         rotate(i * oneRotation + (180 - maxValue) / 2) {
             drawLine(
-                color ,
-                Offset(if (i % 5 == 0) 80f else 30f , size.height / 2) ,
-                Offset(0f , size.height / 2) ,
-                8f ,
+                color,
+                Offset(if (i % 5 == 0) 80f else 30f, size.height / 2),
+                Offset(0f, size.height / 2),
+                8f,
                 StrokeCap.Round
             )
         }

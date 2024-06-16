@@ -45,7 +45,7 @@ import com.android.billingclient.api.BillingResult
 import com.android.billingclient.api.SkuDetails
 import com.d4rk.netprobe.R
 import com.d4rk.netprobe.ads.LargeBannerAdsComposable
-import com.d4rk.netprobe.data.store.DataStore
+import com.d4rk.netprobe.data.datastore.DataStore
 import com.d4rk.netprobe.utils.Utils
 import com.d4rk.netprobe.utils.bounceClick
 import kotlinx.coroutines.CoroutineScope

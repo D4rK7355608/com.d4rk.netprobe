@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.core.view.WindowCompat
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.store.DataStore
+import com.d4rk.netprobe.data.datastore.DataStore
 
 private val lightScheme = lightColorScheme(
     primary = primaryLight ,

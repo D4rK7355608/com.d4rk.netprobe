@@ -45,7 +45,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.dialogs.VersionInfoDialog
+import com.d4rk.netprobe.ui.dialogs.VersionInfoDialog
 import com.d4rk.netprobe.utils.Utils
 import com.d4rk.netprobe.utils.bounceClick
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity

@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.db.table.HomeScreenState
-import com.d4rk.netprobe.data.db.table.ScanResult
+import com.d4rk.netprobe.data.database.table.HomeScreenState
+import com.d4rk.netprobe.data.database.table.ScanResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

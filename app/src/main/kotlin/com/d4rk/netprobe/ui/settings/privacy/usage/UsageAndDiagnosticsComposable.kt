@@ -34,7 +34,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.store.DataStore
+import com.d4rk.netprobe.data.datastore.DataStore
 import com.d4rk.netprobe.utils.SwitchCardComposable
 import com.d4rk.netprobe.utils.Utils
 import kotlinx.coroutines.Dispatchers
