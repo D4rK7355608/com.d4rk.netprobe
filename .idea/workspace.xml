@@ -13,37 +13,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Refactored HomeComposable, moving logic to ViewModel">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.6/fileHashes/fileHashes.lock" afterDir="false" />
+    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Added the new speed test functionality, still in alpha stage, not sable">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_50_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_50_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ads/BannerAdsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ads/BannerAdsComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/core/AppCoreManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/core/AppCoreManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/db/table/HomeScreenState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/database/table/HomeScreenState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/db/table/ScanResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/database/table/ScanResult.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/db/table/UiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/database/table/UiState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/store/DataStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/datastore/DataStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/dialogs/LanguageDialogComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/LanguageDialogComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/dialogs/VersionInfoDialogComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/VersionInfoDialogComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/notifications/workers/AppUsageNotificationWorker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/notifications/workers/AppUsageNotificationWorker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScanViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScanViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/DisplaySettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/DisplaySettingsComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/ThemeSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/ThemeSettingsComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/style/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/style/Theme.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/ads/AdsSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/ads/AdsSettingsComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/usage/UsageAndDiagnosticsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/usage/UsageAndDiagnosticsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/LanguageDialogComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/LanguageDialogComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/VersionInfoDialogComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/dialogs/VersionInfoDialogComposable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +35,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=311e1e42f1b5)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -119,18 +101,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "D4rK7355608"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;D4rK7355608&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/D4rK7355608/com.d4rk.netprobe.git",
-    "accountId": "32ea0206-e978-459d-bf23-d66d3d58af7f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/D4rK7355608/com.d4rk.netprobe.git&quot;,
+    &quot;accountId&quot;: &quot;32ea0206-e978-459d-bf23-d66d3d58af7f&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -166,6 +148,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "git-widget-placeholder": "feauture__jetpack__compose",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/mihai.condrea/StudioProjects/com.d4rk.netprobe/app/src/main/kotlin/com/d4rk/netprobe/data",
     "project.structure.last.edited": "Project",
@@ -446,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717966732964</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added the new speed test functionality, still in alpha stage, not sable">
+      <option name="closed" value="true" />
+      <created>1718538079166</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718538079166</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,6 +465,7 @@
     <MESSAGE value="Jetpack Compose UI overhaul: implemented settings, help, and main section. Project structure refactored and code cleaned." />
     <MESSAGE value="UI overhaul: implemented settings, help, and main section. Project structure refactored and code cleaned." />
     <MESSAGE value="Added the banner image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the banner image" />
+    <MESSAGE value="Added the new speed test functionality, still in alpha stage, not sable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the new speed test functionality, still in alpha stage, not sable" />
   </component>
 </project>

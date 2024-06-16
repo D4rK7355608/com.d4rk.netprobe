@@ -1,5 +1,6 @@
 package com.d4rk.netprobe.ui.speedtest
 
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,7 +24,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -55,25 +57,27 @@ fun SpeedTestComposable() {
     val coroutineScope = rememberCoroutineScope()
     val downloadSpeed = remember { mutableFloatStateOf(0f) }
     val maxSpeed = remember { mutableFloatStateOf(0f) }
-    val progress = remember { mutableFloatStateOf(0f) }
-    val ping = remember { mutableStateOf<String?>("-") }
+    val rememberProgress = remember { mutableFloatStateOf(0f) } // This value will keep in mind the last progress. when the next scan will happen will add first, this value to the scan. by default is 0
+    val ping = remember { mutableStateOf<String?>(null) }
     var testRunning by remember { mutableStateOf(false) }
-    val startTime = remember { mutableLongStateOf(0L) }
-
+    var currentScan by remember { mutableIntStateOf(0) }
     val speedSmooth = remember { SpeedSmoothAnimation() }
-    LaunchedEffect(downloadSpeed.floatValue) {
+    val scanProgresses = remember { mutableStateListOf(0f, 0f, 0f, 0f, 0f) }
+    val testUrl =
+        "https://github.com/D4rK7355608/GoogleProductSansFont/releases/download/v2.0_r1/GoogleProductSansFont-v2.0_r1.zip"
+    val pingHost = "www.google.com"
+
+    LaunchedEffect(downloadSpeed.floatValue, scanProgresses) {
         speedSmooth.animateTo(downloadSpeed.floatValue)
-        if (downloadSpeed.floatValue > maxSpeed.floatValue) {
-            maxSpeed.floatValue = downloadSpeed.floatValue
-        }
+        maxSpeed.floatValue = maxOf(maxSpeed.floatValue, downloadSpeed.floatValue)
     }
 
-    val state = UiState(
-        arcValue = progress.floatValue,
+    val uiState = UiState(
+        inProgress = testRunning,
+        arcValue = rememberProgress.floatValue, // We update the UI state with the progress.
         speed = "%.1f".format(speedSmooth.value),
         ping = ping.value ?: "-",
         maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-",
-        inProgress = testRunning
     )
 
     Column(
@@ -89,41 +93,50 @@ fun SpeedTestComposable() {
                 .fillMaxWidth()
                 .aspectRatio(1f)
         ) {
-            CircularSpeedIndicator(state.arcValue, 240f)
-            StartButton(!state.inProgress && !testRunning) {
+            CircularSpeedIndicator(uiState.arcValue, 240f) // This is the progress bar, so, we will add the progress. This is responsible to show the user the progress bar... progressing.
+            StartButton(isEnabled = !uiState.inProgress && !testRunning) {
                 testRunning = true
                 coroutineScope.launch {
-                    maxSpeed.floatValue = 0f
-                    progress.floatValue = 0f
-                    ping.value = "Checking..."
-                    withContext(Dispatchers.IO) {
-                        ping.value = getPing("www.google.com")
+                    if (currentScan == 0) {
+                        ping.value = "Checking..."
+                        withContext(Dispatchers.IO) {
+                            ping.value = getPing(pingHost)
+                        }
                     }
-                    startTime.longValue = System.currentTimeMillis()
 
-                    downloadFileWithProgress("https://github.com/D4rK7355608/GoogleProductSansFont/releases/download/v2.0_r1/GoogleProductSansFont-v2.0_r1.zip") { currentBytes, totalBytes ->
-                        progress.floatValue = currentBytes.toFloat() / totalBytes.toFloat()
-                        downloadSpeed.floatValue = calculateSpeed(currentBytes, startTime.longValue)
+                    repeat(5) {
+                        currentScan++
+                        val startTime = System.currentTimeMillis()
+                        downloadFileWithProgress(testUrl) { currentBytes, totalBytes ->
+                            val scanProgress =
+                                (currentBytes.toFloat() / totalBytes.toFloat()) * 100f
+                            if (scanProgresses.size > it) {
+                                scanProgresses[it] = scanProgress
+                            } else {
+                                scanProgresses.add(scanProgress)
+                            }
+                            downloadSpeed.floatValue = calculateSpeed(currentBytes, startTime)
+                        }
                     }
+                    currentScan = 0
                     testRunning = false
                 }
             }
-            SpeedValue(state.speed)
+            SpeedValue(uiState.speed)
         }
-        AdditionalInfo(ping.value ?: "-", state.maxSpeed)
+        AdditionalInfo(ping = ping.value ?: "-", maxSpeed = uiState.maxSpeed)
     }
 }
 
 fun calculateSpeed(bytesDownloaded: Long, startTime: Long): Float {
     val timeElapsedMillis = System.currentTimeMillis() - startTime
     return if (timeElapsedMillis > 0) {
-        ((bytesDownloaded * 8).toFloat() / (timeElapsedMillis * 1000))
+        (bytesDownloaded * 8).toFloat() / (timeElapsedMillis * 1000)
     } else 0f
 }
 
 suspend fun downloadFileWithProgress(
-    url: String,
-    onProgressUpdate: (downloadedBytes: Long, totalBytes: Long) -> Unit
+    url: String, onProgressUpdate: (downloadedBytes: Long, totalBytes: Long) -> Unit
 ): ByteArray = withContext(Dispatchers.IO) {
     val connection = URL(url).openConnection() as HttpURLConnection
     connection.connect()
@@ -140,7 +153,7 @@ suspend fun downloadFileWithProgress(
             onProgressUpdate(downloadedBytes, totalBytes)
         }
     }
-    data
+    data // Return the downloaded data if needed
 }
 
 fun getPing(host: String): String {
@@ -156,7 +169,7 @@ fun getPing(host: String): String {
             "Unreachable"
         }
     } catch (e: Exception) {
-        "Error"
+        "Error: ${e.message}"
     }
 }
 
@@ -228,6 +241,7 @@ fun VerticalDivider() {
 
 @Composable
 fun CircularSpeedIndicator(value: Float, angle: Float) {
+    val progress = animateFloatAsState(targetValue = value, label = "")
     val drawLinesColor = MaterialTheme.colorScheme.secondary
     val drawArcsColor = MaterialTheme.colorScheme.primary
     Canvas(
@@ -235,14 +249,14 @@ fun CircularSpeedIndicator(value: Float, angle: Float) {
             .fillMaxSize()
             .padding(40.dp)
     ) {
-        drawLines(value, angle, color = drawLinesColor)
-        drawArcs(value, angle, color = drawArcsColor)
+        drawLines(progress.value, angle, color = drawLinesColor)
+        drawArcs(progress.value, angle, color = drawArcsColor)
     }
 }
 
 fun DrawScope.drawArcs(progress: Float, maxValue: Float, color: Color) {
     val startAngle = 270 - maxValue / 2
-    val sweepAngle = maxValue * progress
+    val sweepAngle = maxValue * (progress / 100f)
 
     val topLeft = Offset(50f, 50f)
     val size = Size(size.width - 100f, size.height - 100f)
