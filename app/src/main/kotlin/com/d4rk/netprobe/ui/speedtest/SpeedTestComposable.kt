@@ -65,9 +65,9 @@ import java.net.URL
 fun SpeedTestComposable() {
     val coroutineScope = rememberCoroutineScope()
     val downloadSpeed = remember { mutableFloatStateOf(0f) }
-    val maxSpeed = remember { mutableFloatStateOf(0f) }
+    val maxSpeed = remember { mutableStateOf<String?>(null) }
     val ping = remember { mutableStateOf<String?>(null) }
-    val wifiStrength = remember { mutableStateOf<Int?>(null) }
+    val wifiStrength = remember { mutableStateOf<String?>(null) }
     var testRunning by remember { mutableStateOf(false) }
     var currentScan by remember { mutableIntStateOf(0) }
     val speedSmooth = remember { SpeedSmoothAnimation() }
@@ -80,7 +80,8 @@ fun SpeedTestComposable() {
 
     LaunchedEffect(downloadSpeed.floatValue, scanProgresses) {
         speedSmooth.animateTo(downloadSpeed.floatValue)
-        maxSpeed.floatValue = maxOf(maxSpeed.floatValue, downloadSpeed.floatValue)
+        maxSpeed.value = maxOf(maxSpeed.value?.toFloatOrNull() ?: 0f, downloadSpeed.floatValue).toString()
+
     }
 
     val uiState = UiState(
@@ -89,7 +90,8 @@ fun SpeedTestComposable() {
         speed = "%.1f".format(speedSmooth.value),
         ping = ping.value ?: "-",
         wifiStrength = if (wifiStrength.value != null) (wifiStrength.value.toString() + " dBm") else "-",
-        maxSpeed = if (maxSpeed.floatValue > 0f) "%.1f mbps".format(maxSpeed.floatValue) else "-"
+        maxSpeed = if ((maxSpeed.value?.toFloatOrNull() ?: 0f) > 0f) "%.1f mbps".format(maxSpeed.value?.toFloat()) else "-"
+
     )
 
     Column(
@@ -111,9 +113,11 @@ fun SpeedTestComposable() {
                 coroutineScope.launch {
                     if (currentScan == 0) {
                         ping.value = checkingString
+                        wifiStrength.value = checkingString
+                        maxSpeed.value = checkingString
                         withContext(Dispatchers.IO) {
                             ping.value = getPing(pingHost)
-                            wifiStrength.value = getWifiStrength(context)
+                            wifiStrength.value = getWifiStrength(context).toString()
                         }
                     }
 
