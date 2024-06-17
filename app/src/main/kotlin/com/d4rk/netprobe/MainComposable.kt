@@ -1,7 +1,9 @@
 package com.d4rk.netprobe
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -38,6 +40,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.d4rk.netprobe.ads.FullBannerAdsComposable
+import com.d4rk.netprobe.data.datastore.DataStore
 import com.d4rk.netprobe.data.navigation.NavigationItem
 import com.d4rk.netprobe.data.navigation.Screen
 import com.d4rk.netprobe.ui.help.HelpActivity
@@ -75,6 +79,7 @@ fun MainComposable() {
     val scope = rememberCoroutineScope()
     val navController = rememberNavController()
     val context = LocalContext.current
+    val dataStore = DataStore.getInstance(context)
     val selectedItemIndex by rememberSaveable { mutableIntStateOf(- 1) }
     ModalNavigationDrawer(drawerState = drawerState , drawerContent = {
         ModalDrawerSheet {
@@ -152,23 +157,26 @@ fun MainComposable() {
                 }
             })
         } , bottomBar = {
-            NavigationBar {
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentRoute = navBackStackEntry?.destination?.route
-                bottomBarItems.forEach { screen ->
-                    NavigationBarItem(icon = {
-                        val iconResource =
+            Column {
+                FullBannerAdsComposable(modifier = Modifier.fillMaxWidth(), dataStore = dataStore)
+                NavigationBar {
+                    val navBackStackEntry by navController.currentBackStackEntryAsState()
+                    val currentRoute = navBackStackEntry?.destination?.route
+                    bottomBarItems.forEach { screen ->
+                        NavigationBarItem(icon = {
+                            val iconResource =
                                 if (currentRoute == screen.route) screen.selectedIcon else screen.icon
-                        Icon(iconResource , contentDescription = null)
-                    } ,
-                                      label = { Text(stringResource(screen.title)) } ,
-                                      selected = currentRoute == screen.route ,
-                                      onClick = {
-                                          navController.navigate(screen.route) {
-                                              popUpTo(navController.graph.startDestinationId)
-                                              launchSingleTop = true
-                                          }
-                                      })
+                            Icon(iconResource, contentDescription = null)
+                        },
+                            label = { Text(stringResource(screen.title)) },
+                            selected = currentRoute == screen.route,
+                            onClick = {
+                                navController.navigate(screen.route) {
+                                    popUpTo(navController.graph.startDestinationId)
+                                    launchSingleTop = true
+                                }
+                            })
+                    }
                 }
             }
         }) { innerPadding ->

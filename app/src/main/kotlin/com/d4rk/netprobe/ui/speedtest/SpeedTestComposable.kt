@@ -41,7 +41,6 @@ import com.d4rk.netprobe.data.database.table.UiState
 @Composable
 fun SpeedTestComposable() {
     val viewModel: SpeedTestViewModel = viewModel()
-
     val uiState = UiState(
         inProgress = viewModel.testRunning,
         arcValue = viewModel.speedSmooth.value,
