@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_16_2024_10_34_AM_[Changes]" date="1718523252516" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_2024_10_34_AM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/16/2024 10:34 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_2024_10_34_AM_[Changes]/file-system.probe" />
+  </binary>
+</changelist>
