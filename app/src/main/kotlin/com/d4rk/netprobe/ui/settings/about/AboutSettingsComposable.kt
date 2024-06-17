@@ -81,7 +81,7 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                                onClick = {
                                    val clip = ClipData.newPlainText("text" , version)
                                    clipboardManager.setPrimaryClip(clip)
-                                   // Show snackbar
+                                   // TODO: Show snackbar
                                })
             }
         }
