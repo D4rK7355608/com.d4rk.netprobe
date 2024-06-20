@@ -60,10 +60,6 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
                     ping.value = getPing()
                     wifiStrength.value =
                         getWifiStrength(getApplication()).toString()
-                    maxSpeed.value =  maxOf(
-                        maxSpeed.value?.toFloatOrNull() ?: 0f,
-                        downloadSpeed.floatValue
-                    ).toString()
                 }
             }
 
@@ -78,6 +74,12 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
                     } else {
                         scanProgresses.add(scanProgress)
                     }
+                    val currentSpeed = calculateSpeed(currentBytes, startTime)
+                    downloadSpeed.floatValue = currentSpeed
+                    maxSpeed.value = "%.1f".format(maxOf(
+                        maxSpeed.value?.toFloatOrNull() ?: 0f,
+                        currentSpeed
+                    ))
                     downloadSpeed.floatValue = calculateSpeed(currentBytes, startTime)
                 }
             }
