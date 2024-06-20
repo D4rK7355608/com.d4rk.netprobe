@@ -45,10 +45,6 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
             withContext(Dispatchers.Main) {
                 speedSmooth.animateTo(downloadSpeed.floatValue)
             }
-            maxSpeed.value = maxOf(
-                maxSpeed.value?.toFloatOrNull() ?: 0f,
-                downloadSpeed.floatValue
-            ).toString()
         }
     }
 
@@ -64,6 +60,10 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
                     ping.value = getPing()
                     wifiStrength.value =
                         getWifiStrength(getApplication()).toString()
+                    maxSpeed.value =  maxOf(
+                        maxSpeed.value?.toFloatOrNull() ?: 0f,
+                        downloadSpeed.floatValue
+                    ).toString()
                 }
             }
 
