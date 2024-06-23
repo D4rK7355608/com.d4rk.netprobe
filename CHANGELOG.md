@@ -1,3 +1,10 @@
+# Version 2.0.0
+- Migrated the app to Semantic Versioning (SemVer).
+- Reworked the app functionality from the ground.
+- Optimized the algorithm.
+- Added a new purpose for the app to scan the network speed.
+- Reworked the app with a new design matching our other apps.
+
 # Version 1.2_r2:
 
 - Made minor under-the-hood improvements for a better overall app experience.
