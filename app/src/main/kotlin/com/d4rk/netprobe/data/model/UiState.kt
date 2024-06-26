@@ -1,4 +1,4 @@
-package com.d4rk.netprobe.data.database.table
+package com.d4rk.netprobe.data.model
 
 data class UiState(
     val inProgress: Boolean,
