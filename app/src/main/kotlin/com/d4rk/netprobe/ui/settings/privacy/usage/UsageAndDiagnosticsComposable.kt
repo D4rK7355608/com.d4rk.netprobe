@@ -35,8 +35,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.datastore.DataStore
-import com.d4rk.netprobe.utils.SwitchCardComposable
-import com.d4rk.netprobe.utils.Utils
+import com.d4rk.netprobe.utils.compose.components.SwitchCardComposable
+import com.d4rk.netprobe.utils.IntentUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -105,7 +105,7 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
                         ClickableText(text = annotatedString , onClick = { offset ->
                             annotatedString.getStringAnnotations("URL" , offset , offset)
                                     .firstOrNull()?.let { annotation ->
-                                        Utils.openUrl(context , annotation.item)
+                                        IntentUtils.openUrl(context , annotation.item)
                                     }
                         })
                     }

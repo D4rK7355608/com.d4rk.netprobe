@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.model.UiState
+import com.d4rk.netprobe.data.model.ui.speedtest.UiState
 
 @Composable
 fun SpeedTestComposable() {

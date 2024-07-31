@@ -1,4 +1,4 @@
-package com.d4rk.netprobe.utils
+package com.d4rk.netprobe.utils.compose
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.core.animateFloatAsState
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
-import com.d4rk.netprobe.data.model.ButtonState
+import com.d4rk.netprobe.data.model.ui.button.ButtonState
 
 @SuppressLint("ReturnFromAwaitPointerEventScope")
 @Composable

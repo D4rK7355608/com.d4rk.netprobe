@@ -47,7 +47,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.utils.bounceClick
+import com.d4rk.netprobe.utils.compose.bounceClick
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest

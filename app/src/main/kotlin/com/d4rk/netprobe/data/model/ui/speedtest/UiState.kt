@@ -1,4 +1,4 @@
-package com.d4rk.netprobe.data.model
+package com.d4rk.netprobe.data.model.ui.speedtest
 
 data class UiState(
     val inProgress: Boolean,

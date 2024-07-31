@@ -7,6 +7,7 @@ pluginManagement {
             setUrl("https://jitpack.io")
         }
     }
+
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == "com.google.android.gms.oss-licenses-plugin") {
@@ -15,6 +16,7 @@ pluginManagement {
         }
     }
 }
+
 @Suppress("UnstableApiUsage") dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -25,5 +27,6 @@ pluginManagement {
         }
     }
 }
+
 rootProject.name = "Net Probe"
 include(":app")

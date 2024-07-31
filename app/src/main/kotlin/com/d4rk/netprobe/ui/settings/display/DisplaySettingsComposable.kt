@@ -34,11 +34,11 @@ import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.datastore.DataStore
 import com.d4rk.netprobe.ui.dialogs.LanguageDialog
 import com.d4rk.netprobe.ui.settings.display.theme.ThemeSettingsActivity
-import com.d4rk.netprobe.utils.PreferenceCategoryItem
-import com.d4rk.netprobe.utils.PreferenceItem
-import com.d4rk.netprobe.utils.SwitchPreferenceItem
-import com.d4rk.netprobe.utils.SwitchPreferenceItemWithDivider
-import com.d4rk.netprobe.utils.Utils
+import com.d4rk.netprobe.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.netprobe.utils.compose.components.PreferenceItem
+import com.d4rk.netprobe.utils.compose.components.SwitchPreferenceItem
+import com.d4rk.netprobe.utils.compose.components.SwitchPreferenceItemWithDivider
+import com.d4rk.netprobe.utils.IntentUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -99,7 +99,7 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                                                     }
                                                 } ,
                                                 onClick = {
-                                                    Utils.openActivity(
+                                                    IntentUtils.openActivity(
                                                         context , ThemeSettingsActivity::class.java
                                                     )
                                                 })

@@ -1,5 +1,3 @@
-@file:Suppress("DEPRECATION")
-
 package com.d4rk.netprobe.ui.support
 
 import android.content.Context
@@ -30,10 +28,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.snapshots.SnapshotStateMap
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
@@ -42,151 +37,154 @@ import androidx.compose.ui.unit.dp
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
-import com.android.billingclient.api.SkuDetails
 import com.d4rk.netprobe.R
 import com.d4rk.netprobe.ads.LargeBannerAdsComposable
 import com.d4rk.netprobe.data.datastore.DataStore
-import com.d4rk.netprobe.utils.Utils
-import com.d4rk.netprobe.utils.bounceClick
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import com.d4rk.netprobe.utils.IntentUtils
+import com.d4rk.netprobe.utils.compose.bounceClick
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SupportComposable(activity : SupportActivity) {
+fun SupportComposable(viewModel: SupportViewModel, activity: SupportActivity) {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
-    val coroutineScope = rememberCoroutineScope()
-    val skuDetailsMap = remember { mutableStateMapOf<String , SkuDetails>() }
-    val billingClient = rememberBillingClient(context , coroutineScope , activity , skuDetailsMap)
+    val billingClient = rememberBillingClient(context, viewModel)
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
-        LargeTopAppBar(title = { Text(stringResource(R.string.support_us)) } , navigationIcon = {
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
+        LargeTopAppBar(title = { Text(stringResource(R.string.support_us)) }, navigationIcon = {
             IconButton(onClick = {
                 activity.finish()
             }) {
                 Icon(
-                    Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
+                    Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null
                 )
             }
-        } , scrollBehavior = scrollBehavior)
+        }, scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         Box(
             modifier = Modifier
-                    .padding(paddingValues)
-                    .fillMaxHeight()
+                .padding(paddingValues)
+                .fillMaxHeight()
         ) {
             LazyColumn {
                 item {
                     Text(
-                        text = stringResource(R.string.paid_support) ,
-                        modifier = Modifier.padding(start = 16.dp , top = 16.dp) ,
-                        style = MaterialTheme.typography.titleLarge ,
+                        text = stringResource(R.string.paid_support),
+                        modifier = Modifier.padding(start = 16.dp, top = 16.dp),
+                        style = MaterialTheme.typography.titleLarge,
                     )
                 }
                 item {
                     OutlinedCard(
                         modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp)
+                            .fillMaxWidth()
+                            .padding(16.dp)
                     ) {
                         Column {
                             Text(
-                                text = stringResource(R.string.summary_donations) ,
+                                text = stringResource(R.string.summary_donations),
                                 modifier = Modifier.padding(16.dp)
                             )
                             LazyRow(
                                 modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(horizontal = 16.dp) ,
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 16.dp),
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 item {
                                     FilledTonalButton(
                                         modifier = Modifier
-                                                .fillMaxWidth()
-                                                .bounceClick() ,
+                                            .fillMaxWidth()
+                                            .bounceClick(),
                                         onClick = {
                                             activity.initiatePurchase(
-                                                "low_donation" , skuDetailsMap , billingClient
+                                                "low_donation",
+                                                viewModel.skuDetails,
+                                                billingClient,
                                             )
-                                        } ,
+                                        },
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
+                                            Icons.Outlined.Paid,
+                                            contentDescription = null,
                                             modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                                        Text(skuDetailsMap["low_donation"]?.price ?: "")
+                                        Text(viewModel.skuDetails["low_donation"]?.price ?: "")
                                     }
                                 }
                                 item {
                                     FilledTonalButton(
                                         modifier = Modifier
-                                                .fillMaxWidth()
-                                                .bounceClick() ,
+                                            .fillMaxWidth()
+                                            .bounceClick(),
                                         onClick = {
                                             activity.initiatePurchase(
-                                                "normal_donation" , skuDetailsMap , billingClient
+                                                "normal_donation",
+                                                viewModel.skuDetails,
+                                                billingClient,
                                             )
-                                        } ,
+                                        },
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
+                                            Icons.Outlined.Paid,
+                                            contentDescription = null,
                                             modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                                        Text(skuDetailsMap["normal_donation"]?.price ?: "")
+                                        Text(viewModel.skuDetails["normal_donation"]?.price ?: "")
                                     }
                                 }
                             }
                             LazyRow(
                                 modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(16.dp) ,
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 item {
                                     FilledTonalButton(
                                         modifier = Modifier
-                                                .fillMaxWidth()
-                                                .bounceClick() ,
+                                            .fillMaxWidth()
+                                            .bounceClick(),
                                         onClick = {
                                             activity.initiatePurchase(
-                                                "high_donation" , skuDetailsMap , billingClient
+                                                "high_donation",
+                                                viewModel.skuDetails,
+                                                billingClient,
                                             )
-                                        } ,
+                                        },
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
+                                            Icons.Outlined.Paid,
+                                            contentDescription = null,
                                             modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                                        Text(skuDetailsMap["high_donation"]?.price ?: "")
+                                        Text(viewModel.skuDetails["high_donation"]?.price ?: "")
                                     }
                                 }
                                 item {
                                     FilledTonalButton(
 
                                         modifier = Modifier
-                                                .fillMaxWidth()
-                                                .bounceClick() ,
+                                            .fillMaxWidth()
+                                            .bounceClick(),
                                         onClick = {
                                             activity.initiatePurchase(
-                                                "extreme_donation" , skuDetailsMap , billingClient
+                                                "extreme_donation",
+                                                viewModel.skuDetails,
+                                                billingClient,
                                             )
-                                        } ,
+                                        },
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
+                                            Icons.Outlined.Paid,
+                                            contentDescription = null,
                                             modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                                        Text(skuDetailsMap["extreme_donation"]?.price ?: "")
+                                        Text(viewModel.skuDetails["extreme_donation"]?.price ?: "")
                                     }
                                 }
                             }
@@ -195,26 +193,26 @@ fun SupportComposable(activity : SupportActivity) {
                 }
                 item {
                     Text(
-                        text = stringResource(R.string.non_paid_support) ,
-                        modifier = Modifier.padding(start = 16.dp) ,
-                        style = MaterialTheme.typography.titleLarge ,
+                        text = stringResource(R.string.non_paid_support),
+                        modifier = Modifier.padding(start = 16.dp),
+                        style = MaterialTheme.typography.titleLarge,
                     )
                 }
                 item {
                     FilledTonalButton(
                         onClick = {
-                            Utils.openUrl(
-                                context , "https://direct-link.net/548212/agOqI7123501341"
+                            IntentUtils.openUrl(
+                                context, "https://direct-link.net/548212/agOqI7123501341"
                             )
-                        } ,
+                        },
                         modifier = Modifier
-                                .fillMaxWidth()
-                                .bounceClick()
-                                .padding(16.dp) ,
+                            .fillMaxWidth()
+                            .bounceClick()
+                            .padding(16.dp),
                     ) {
                         Icon(
-                            Icons.Outlined.Paid ,
-                            contentDescription = null ,
+                            Icons.Outlined.Paid,
+                            contentDescription = null,
                             modifier = Modifier.size(ButtonDefaults.IconSize)
                         )
                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
@@ -223,7 +221,7 @@ fun SupportComposable(activity : SupportActivity) {
                 }
                 item {
                     LargeBannerAdsComposable(
-                        modifier = Modifier.padding(bottom = 12.dp) , dataStore = dataStore
+                        modifier = Modifier.padding(bottom = 12.dp), dataStore = dataStore
                     )
                 }
             }
@@ -233,21 +231,22 @@ fun SupportComposable(activity : SupportActivity) {
 
 @Composable
 fun rememberBillingClient(
-    context : Context ,
-    coroutineScope : CoroutineScope ,
-    activity : SupportActivity ,
-    skuDetailsMap : SnapshotStateMap<String , SkuDetails>
-) : BillingClient {
+    context: Context,
+    viewModel: SupportViewModel
+): BillingClient {
     val billingClient = remember {
-        BillingClient.newBuilder(context).setListener { _ , _ -> }.enablePendingPurchases().build()
+        @Suppress("DEPRECATION")
+        BillingClient.newBuilder(context)
+            .setListener { _, _ -> }
+            .enablePendingPurchases()
+            .build()
     }
+
     DisposableEffect(billingClient) {
         billingClient.startConnection(object : BillingClientStateListener {
-            override fun onBillingSetupFinished(billingResult : BillingResult) {
+            override fun onBillingSetupFinished(billingResult: BillingResult) {
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    coroutineScope.launch {
-                        activity.querySkuDetails(billingClient , skuDetailsMap)
-                    }
+                    viewModel.querySkuDetails(billingClient)
                 }
             }
 
