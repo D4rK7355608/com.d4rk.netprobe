@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.utils.PreferenceCategoryItem
-import com.d4rk.netprobe.utils.PreferenceItem
+import com.d4rk.netprobe.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.netprobe.utils.compose.components.PreferenceItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -77,6 +77,10 @@ fun PermissionsSettingsComposable(activity : PermissionsSettingsActivity) {
                 PreferenceItem(
                     title = stringResource(R.string.foreground_service) ,
                     summary = stringResource(R.string.summary_preference_permissions_foreground_service) ,
+                )
+                PreferenceItem(
+                    title = stringResource(R.string.read_phone_state) ,
+                    summary = stringResource(R.string.summary_preference_permissions_read_phone_state) ,
                 )
             }
         }

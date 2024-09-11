@@ -76,11 +76,12 @@ class MainActivity : AppCompatActivity() {
      *
      * Consider utilizing alternative approaches for handling back button events.
      */
-    @Deprecated("Deprecated in Java")
+
+    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
         MaterialAlertDialogBuilder(this).setTitle(R.string.close).setMessage(R.string.summary_close)
-                .setPositiveButton(android.R.string.yes) { _ , _ ->
+                .setPositiveButton(android.R.string.ok) { _ , _ ->
                     super.onBackPressed()
                     moveTaskToBack(true)
                 }.setNegativeButton(android.R.string.no , null).apply { show() }

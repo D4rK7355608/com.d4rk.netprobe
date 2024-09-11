@@ -33,7 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.datastore.DataStore
-import com.d4rk.netprobe.utils.SwitchCardComposable
+import com.d4rk.netprobe.utils.compose.components.SwitchCardComposable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

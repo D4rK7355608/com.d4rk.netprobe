@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config>
@@ -13,19 +16,158 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Fixed the app animations and added view model for the speed tester">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Updated the project structure">
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxActivityLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxAnimationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxComposeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxConstraintlayoutLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxDatastoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxGraphicsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleCommonLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleLivedataLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleViewmodelLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxMaterialIconsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxMaterialLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxUiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxWorkLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxWorkRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AppLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$AppUpdateLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$FirebaseAnalyticsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$FirebaseCrashlyticsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$FirebaseLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$GoogleDevtoolsVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$GoogleFirebaseVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$GoogleOssVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$GoogleVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$HiltLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$KotlinxCoroutinesLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$KotlinxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayServicesLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayServicesOssLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$ReviewLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$UiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$UiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxActivityLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxAnimationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxComposeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxConstraintlayoutLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxDatastoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxGraphicsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleCommonLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleLivedataLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleViewmodelLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxMaterialIconsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxMaterialLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxUiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxWorkLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxWorkRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AppLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AppUpdateLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$FirebaseAnalyticsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$FirebaseCrashlyticsLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$FirebaseLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GoogleDevtoolsVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GoogleFirebaseVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GoogleOssVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GoogleVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$HiltLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$KotlinxCoroutinesLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$KotlinxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayServicesLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayServicesOssLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ReviewLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$UiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$UiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/sources/org/gradle/accessors/dm/LibrariesForLibs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/1fe64c1086007dd849899350a6c6cff876b7ca67/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.8/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_11_2024_8_49_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_11_2024_8_49_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM_[Changes]/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM_[Changes]/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM_[Changes]/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_11_2024_9_52_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/MainComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ads/BannerAdsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ads/BannerAdsComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/constants/ads/AdsConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/constants/ads/AdsConstants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ButtonState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/button/ButtonState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/HomeScreenState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/speedtest/HomeScreenState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ScanResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/ipscan/ScanResult.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/UiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/speedtest/UiState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/navigation/NavigationItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/navigation/NavigationDrawerItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/navigation/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/navigation/BottomNavigationScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/help/HelpComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScanViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScanViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScannerComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/scanner/ScannerComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/SettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/SettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/about/AboutSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/about/AboutSettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/advanced/AdvancedSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/advanced/AdvancedSettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/DisplaySettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/DisplaySettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/ThemeSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/display/theme/ThemeSettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/PrivacySettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/PrivacySettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/ads/AdsSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/ads/AdsSettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/permissions/PermissionsSettingsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/permissions/PermissionsSettingsComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/usage/UsageAndDiagnosticsComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/settings/privacy/usage/UsageAndDiagnosticsComposable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/speedtest/SpeedTestComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/startup/StartupComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/startup/StartupComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportComposable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/support/SupportComposable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/AnimationUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/compose/AnimationUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/SettingsComposablesUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/compose/components/SettingsComposablesUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/utils/IntentUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/untranslatable_strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +230,10 @@
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\d4rk7\Documents\Google\Google Play Console\Apps\Keys\com.d4rk.netprobe.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\d4rk7\AndroidStudioProjects\com.d4rk.netprobe\app\src\main\play\keys\com.d4rk.netprobe.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -147,10 +289,10 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feauture__jetpack__compose&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mihai.condrea/StudioProjects/com.d4rk.netprobe/app/src/main/kotlin/com/d4rk/netprobe/data&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/d4rk7/AndroidStudioProjects/com.d4rk.netprobe/app/src/main/play/keys/com.d4rk.netprobe.jks&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -182,10 +324,20 @@
       <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\notifications" />
       <recent name="C:\Users\d4rk7\AndroidStudioProjects\com.d4rk.netprobe\app\src\main\res\layout" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\d4rk7\AndroidStudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\utils\compose\components" />
+      <recent name="C:\Users\d4rk7\AndroidStudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\utils\compose" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.d4rk.netprobe.ads.managers" />
+      <recent name="com.d4rk.netprobe.data.model.ui.ipscan" />
+      <recent name="com.d4rk.netprobe.data.model.ui.speedtest" />
+      <recent name="com.d4rk.netprobe.data.model.ui.button" />
+      <recent name="com.d4rk.netprobe.data.model.ui.navigation" />
+      <recent name="com.d4rk.netprobe.data.model.ui" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.d4rk.netprobe.ui.support" />
+      <recent name="com.d4rk.netprobe.ui.help" />
       <recent name="com.d4rk.netprobe.data.navigation" />
     </key>
   </component>
@@ -485,7 +637,103 @@
       <option name="project" value="LOCAL" />
       <updated>1718622908616</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718688222284</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688222284</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718688545104</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688545104</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718688553820</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688553820</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718688575801</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688575801</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718688645337</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688645337</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Updated some props">
+      <option name="closed" value="true" />
+      <created>1718914061971</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1718914061971</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Fixed the max speed">
+      <option name="closed" value="true" />
+      <created>1718918449759</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1718918449759</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Now the app shows the max speed correctly">
+      <option name="closed" value="true" />
+      <created>1718918767250</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1718918767250</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Updated the speed test view model">
+      <option name="closed" value="true" />
+      <created>1718943449932</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1718943449932</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Updated the project libraries">
+      <option name="closed" value="true" />
+      <created>1719132882435</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1719132882435</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Updated the project structure for models">
+      <option name="closed" value="true" />
+      <created>1719386419361</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1719386419361</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Updated the project structure">
+      <option name="closed" value="true" />
+      <created>1719386626577</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1719386626577</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,6 +765,13 @@
     <MESSAGE value="Updated the UI and fixed the progress bar" />
     <MESSAGE value="Small ui updates and string formatting" />
     <MESSAGE value="Fixed the app animations and added view model for the speed tester" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the app animations and added view model for the speed tester" />
+    <MESSAGE value="Updated some props" />
+    <MESSAGE value="Fixed the max speed" />
+    <MESSAGE value="Now the app shows the max speed correctly" />
+    <MESSAGE value="Updated the speed test view model" />
+    <MESSAGE value="Updated the project libraries" />
+    <MESSAGE value="Updated the project structure for models" />
+    <MESSAGE value="Updated the project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the project structure" />
   </component>
 </project>

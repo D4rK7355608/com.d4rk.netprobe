@@ -42,36 +42,36 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.netprobe.ads.FullBannerAdsComposable
 import com.d4rk.netprobe.data.datastore.DataStore
-import com.d4rk.netprobe.data.navigation.NavigationItem
-import com.d4rk.netprobe.data.navigation.Screen
+import com.d4rk.netprobe.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.netprobe.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.netprobe.ui.help.HelpActivity
 import com.d4rk.netprobe.ui.scanner.HomeComposable
 import com.d4rk.netprobe.ui.settings.SettingsActivity
 import com.d4rk.netprobe.ui.speedtest.SpeedTestComposable
 import com.d4rk.netprobe.ui.support.SupportActivity
-import com.d4rk.netprobe.utils.Utils
+import com.d4rk.netprobe.utils.IntentUtils
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainComposable() {
     val bottomBarItems = listOf(
-        Screen.SpeedTest , Screen.LinkScan
+        BottomNavigationScreen.SpeedTest , BottomNavigationScreen.LinkScan
     )
     val drawerItems = listOf(
-        NavigationItem(
+        NavigationDrawerItem(
             title = R.string.settings ,
             selectedIcon = Icons.Outlined.Settings ,
         ) ,
-        NavigationItem(
+        NavigationDrawerItem(
             title = R.string.help_and_feedback ,
             selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
         ) ,
-        NavigationItem(
+        NavigationDrawerItem(
             title = R.string.updates ,
             selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
         ) ,
-        NavigationItem(
+        NavigationDrawerItem(
             title = R.string.share , selectedIcon = Icons.Outlined.Share
         ) ,
     )
@@ -92,26 +92,26 @@ fun MainComposable() {
                                          when (item.title) {
 
                                              R.string.settings -> {
-                                                 Utils.openActivity(
+                                                 IntentUtils.openActivity(
                                                      context , SettingsActivity::class.java
                                                  )
                                              }
 
                                              R.string.help_and_feedback -> {
-                                                 Utils.openActivity(
+                                                 IntentUtils.openActivity(
                                                      context , HelpActivity::class.java
                                                  )
                                              }
 
                                              R.string.updates -> {
-                                                 Utils.openUrl(
+                                                 IntentUtils.openUrl(
                                                      context ,
                                                      "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                                                  )
                                              }
 
                                              R.string.share -> {
-                                                 Utils.shareApp(context)
+                                                 IntentUtils.shareApp(context)
                                              }
                                          }
                                          scope.launch {
@@ -149,7 +149,7 @@ fun MainComposable() {
                 }
             } , actions = {
                 IconButton(onClick = {
-                    Utils.openActivity(context , SupportActivity::class.java)
+                    IntentUtils.openActivity(context , SupportActivity::class.java)
                 }) {
                     Icon(
                         Icons.Outlined.VolunteerActivism , contentDescription = "Support"
@@ -180,13 +180,13 @@ fun MainComposable() {
                 }
             }
         }) { innerPadding ->
-            NavHost(navController , startDestination = Screen.SpeedTest.route) {
-                composable(Screen.SpeedTest.route) {
+            NavHost(navController , startDestination = BottomNavigationScreen.SpeedTest.route) {
+                composable(BottomNavigationScreen.SpeedTest.route) {
                     Box(modifier = Modifier.padding(innerPadding)) {
                         SpeedTestComposable()
                     }
                 }
-                composable(Screen.LinkScan.route) {
+                composable(BottomNavigationScreen.LinkScan.route) {
                     Box(modifier = Modifier.padding(innerPadding)) {
                         HomeComposable()
                     }

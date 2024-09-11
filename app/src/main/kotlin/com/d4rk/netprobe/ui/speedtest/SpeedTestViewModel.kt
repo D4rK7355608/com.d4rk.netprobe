@@ -26,7 +26,6 @@ import java.net.InetAddress
 import java.net.URL
 
 class SpeedTestViewModel(application: Application) : AndroidViewModel(application) {
-    private val coroutineScope = viewModelScope
     val downloadSpeed = mutableFloatStateOf(0f)
     val maxSpeed = mutableStateOf<String?>(null)
     val ping = mutableStateOf<String?>(null)
@@ -41,21 +40,17 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
     private val checkingString =getApplication<Application>().getString(R.string.checking)
 
     init {
-        coroutineScope.launch {
+        viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 speedSmooth.animateTo(downloadSpeed.floatValue)
             }
-            maxSpeed.value = maxOf(
-                maxSpeed.value?.toFloatOrNull() ?: 0f,
-                downloadSpeed.floatValue
-            ).toString()
         }
     }
 
     fun startSpeedTest() {
         resetStates()
         testRunning = true
-        coroutineScope.launch {
+        viewModelScope.launch {
             if (currentScan == 0) {
                 ping.value = checkingString
                 wifiStrength.value = checkingString
@@ -78,6 +73,12 @@ class SpeedTestViewModel(application: Application) : AndroidViewModel(applicatio
                     } else {
                         scanProgresses.add(scanProgress)
                     }
+                    val currentSpeed = calculateSpeed(currentBytes, startTime)
+                    downloadSpeed.floatValue = currentSpeed
+                    maxSpeed.value = "%.1f".format(maxOf(
+                        maxSpeed.value?.toFloatOrNull() ?: 0f,
+                        currentSpeed
+                    ))
                     downloadSpeed.floatValue = calculateSpeed(currentBytes, startTime)
                 }
             }
