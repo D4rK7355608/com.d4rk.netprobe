@@ -1,4 +1,12 @@
 <resources>
+    <string-array name="preference_startup_entries">
+        <item>@string/speed_test</item>
+        <item>@string/scanner</item>
+    </string-array>
+    <string-array name="preference_startup_values">
+        <item>speed_test</item>
+        <item>scanner</item>
+    </string-array>
 
     <string-array name="preference_language_entries">
         <item>@string/bulgarian</item>

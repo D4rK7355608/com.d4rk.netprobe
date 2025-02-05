@@ -7,7 +7,7 @@ import androidx.compose.material.icons.rounded.Scanner
 import androidx.compose.material.icons.sharp.Scanner
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.constants.ui.bottombar.BottomBarRoutes
+import com.d4rk.netprobe.utils.constants.ui.bottombar.BottomBarRoutes
 
 sealed class BottomNavigationScreen(
     val route : String , val icon : ImageVector , val selectedIcon : ImageVector , val title : Int

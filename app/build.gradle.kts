@@ -1,42 +1,43 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.googlePlayServices)
-    alias(libs.plugins.googleOssServices)
-    alias(libs.plugins.googleFirebase)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.devToolsKsp)
+    alias(notation = libs.plugins.androidApplication)
+    alias(notation = libs.plugins.jetbrainsKotlinAndroid)
+    alias(notation = libs.plugins.googlePlayServices)
+    alias(notation = libs.plugins.googleFirebase)
+    alias(notation = libs.plugins.compose.compiler)
+    alias(notation = libs.plugins.about.libraries)
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 35
     namespace = "com.d4rk.netprobe"
     defaultConfig {
         applicationId = "com.d4rk.netprobe"
-        minSdk = 26
-        targetSdk = 34
+        minSdk = 26 // TODO: Downgrade to 23
+        targetSdk = 35
         versionCode = 15
         versionName = "2.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += listOf(
-            "en",
-            "de",
-            "es",
-            "fr",
-            "hi",
-            "hu",
-            "in",
-            "it",
-            "ja",
-            "ro",
-            "ru",
-            "th",
-            "tr",
-            "sv",
-            "bg",
-            "pl",
-            "uk",
-            "pt-rBR",
+        @Suppress("UnstableApiUsage")
+        androidResources.localeFilters += listOf(
+            "en" ,
+            "bg-rBG" ,
+            "de-rDE" ,
+            "es-rGQ" ,
+            "fr-rFR" ,
+            "hi-rIN" ,
+            "hu-rHU" ,
+            "in-rID" ,
+            "it-rIT" ,
+            "ja-rJP" ,
+            "pl-rPL" ,
+            "pt-rBR" ,
+            "ro-rRO" ,
+            "ru-rRU" ,
+            "sv-rSE" ,
+            "th-rTH" ,
+            "tr-rTR" ,
+            "uk-rUA" ,
+            "zh-rTW" ,
         )
         vectorDrawables {
             useSupportLibrary = true
@@ -45,20 +46,18 @@ android {
 
     buildTypes {
         release {
-            multiDexEnabled = true
-            isMinifyEnabled = true
-            isShrinkResources = true
             isDebuggable = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
         }
-
         debug {
-            multiDexEnabled = true
             isDebuggable = true
+        }
+    }
+
+    buildTypes.forEach { buildType ->
+        with(buildType) {
+            multiDexEnabled = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro"
             )
         }
     }
@@ -77,7 +76,6 @@ android {
         compose = true
     }
 
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -92,59 +90,12 @@ android {
 }
 
 dependencies {
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics.ktx)
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.perf)
 
-    // Google
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.play.services.ads)
-    implementation(libs.billing)
-    implementation(libs.material)
-    implementation(libs.play.services.oss.licenses)
-    implementation(libs.review.ktx)
-    implementation(libs.app.update.ktx)
-    implementation(libs.volley)
+    // App Core
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.51") {
+        isTransitive = true
+    }
 
     // Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.animation.core)
-    implementation(libs.androidx.foundation)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.runtime)
-    implementation(libs.androidx.runtime.livedata)
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.graphics.shapes)
-    implementation(libs.androidx.constraintlayout.compose)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.datastore.core)
-    implementation(libs.androidx.navigation.compose)
-
-    // AndroidX
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.process)
-    implementation(libs.androidx.lifecycle.common.java8)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.multidex)
-    implementation(libs.androidx.work.runtime.ktx)
-
-    // Kotlin
-    implementation(libs.kotlinx.coroutines.android)
-
-    // Test
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(dependencyNotation = libs.androidx.constraintlayout.compose)
 }

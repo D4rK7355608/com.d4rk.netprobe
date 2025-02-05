@@ -1,124 +1,45 @@
 package com.d4rk.netprobe.data.datastore
 
 import android.content.Context
-import androidx.compose.runtime.mutableStateOf
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
+import com.d4rk.android.libs.apptoolkit.data.datastore.CommonDataStore
+import com.d4rk.netprobe.utils.constants.datastore.AppDataStoreConstants
+import com.d4rk.netprobe.utils.constants.ui.bottombar.BottomBarRoutes
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-val Context.dataStore by preferencesDataStore("settings")
-
-class DataStore(context : Context) {
-    private val dataStore = context.dataStore
+class DataStore(context : Context) : CommonDataStore(context) {
 
     companion object {
         @Volatile
         private var instance : DataStore? = null
 
         fun getInstance(context : Context) : DataStore {
-            return instance ?: synchronized(this) {
-                instance ?: DataStore(context).also { instance = it }
+            return instance ?: synchronized(lock = this) {
+                instance ?: DataStore(context.applicationContext).also { instance = it }
             }
         }
     }
 
-    // Last used app notifications
-    private val lastUsedKey = longPreferencesKey("last_used")
-    val lastUsed : Flow<Long> = dataStore.data.map { preferences ->
-        preferences[lastUsedKey] ?: 0
-    }
-
-    suspend fun saveLastUsed(timestamp : Long) {
-        dataStore.edit { preferences ->
-            preferences[lastUsedKey] = timestamp
+    fun getStartupPage() : Flow<String> {
+        return dataStore.data.map { preferences ->
+            preferences[stringPreferencesKey(name = AppDataStoreConstants.DATA_STORE_STARTUP_PAGE)]
+                ?: BottomBarRoutes.SPEED_TEST
         }
     }
 
-
-    // Startup
-    private val startupKey = booleanPreferencesKey("value")
-    val startup : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[startupKey] ?: true
-    }
-
-    suspend fun saveStartup(isFirstTime : Boolean) {
+    suspend fun saveStartupPage(startupPage : String) {
         dataStore.edit { preferences ->
-            preferences[startupKey] = isFirstTime
+            preferences[stringPreferencesKey(name = AppDataStoreConstants.DATA_STORE_STARTUP_PAGE)] =
+                    startupPage
         }
     }
 
-    // Display
-    val themeModeState = mutableStateOf("follow_system")
-    private val themeModeKey = stringPreferencesKey("theme_mode")
-    val themeMode : Flow<String> = dataStore.data.map { preferences ->
-        preferences[themeModeKey] ?: "follow_system"
-    }
-
-    suspend fun saveThemeMode(mode : String) {
-        dataStore.edit { preferences ->
-            preferences[themeModeKey] = mode
-        }
-    }
-
-    private val amoledModeKey = booleanPreferencesKey("amoled_mode")
-    val amoledMode : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[amoledModeKey] ?: false
-    }
-
-    suspend fun saveAmoledMode(isChecked : Boolean) {
-        dataStore.edit { preferences ->
-            preferences[amoledModeKey] = isChecked
-        }
-    }
-
-    private val dynamicColorsKey = booleanPreferencesKey("dynamic_colors")
-    val dynamicColors : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[dynamicColorsKey] ?: true
-    }
-
-    suspend fun saveDynamicColors(isChecked : Boolean) {
-        dataStore.edit { preferences ->
-            preferences[dynamicColorsKey] = isChecked
-        }
-    }
-
-    private val languageKey = stringPreferencesKey("language")
-
-    fun getLanguage() : Flow<String> = dataStore.data.map { preferences ->
-        preferences[languageKey] ?: "en"
-    }
-
-    suspend fun saveLanguage(language : String) {
-        dataStore.edit { preferences ->
-            preferences[languageKey] = language
-        }
-    }
-
-    // Usage and Diagnostics
-    private val usageAndDiagnosticsKey = booleanPreferencesKey("usage_and_diagnostics")
-    val usageAndDiagnostics : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[usageAndDiagnosticsKey] ?: true
-    }
-
-    suspend fun saveUsageAndDiagnostics(isChecked : Boolean) {
-        dataStore.edit { preferences ->
-            preferences[usageAndDiagnosticsKey] = isChecked
-        }
-    }
-
-    // Ads
-    private val adsKey = booleanPreferencesKey("ads")
-    val ads : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[adsKey] ?: true
-    }
-
-    suspend fun saveAds(isChecked : Boolean) {
-        dataStore.edit { preferences ->
-            preferences[adsKey] = isChecked
+    fun getShowBottomBarLabels() : Flow<Boolean> {
+        return dataStore.data.map { preferences ->
+            preferences[booleanPreferencesKey(name = AppDataStoreConstants.DATA_STORE_SHOW_BOTTOM_BAR_LABELS)] != false
         }
     }
 }
