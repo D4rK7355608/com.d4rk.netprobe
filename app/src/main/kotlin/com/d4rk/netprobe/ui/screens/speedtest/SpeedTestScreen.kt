@@ -1,5 +1,6 @@
 package com.d4rk.netprobe.ui.screens.speedtest
 
+import android.content.Context
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -32,6 +33,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,17 +44,11 @@ import com.d4rk.netprobe.data.model.ui.screens.UiSpeedTestScreen
 @Composable
 fun SpeedTestScreen() {
     val viewModel : SpeedTestViewModel = viewModel()
-    val uiState = UiSpeedTestScreen(
-        inProgress = viewModel.testRunning , arcValue = viewModel.speedSmooth.value , speed = "%.1f".format(viewModel.speedSmooth.value) , ping = viewModel.ping.value ?: "-" , wifiStrength = if (viewModel.wifiStrength.value != null) {
-            viewModel.wifiStrength.value.toString() + " dBm"
-        }
-        else {
-            "-"
-        } , maxSpeed = viewModel.maxSpeed.value ?: "-"
-    )
+    val uiState : UiSpeedTestScreen = viewModel.uiState.value
+    val context : Context = LocalContext.current
 
-    LaunchedEffect(key1 = viewModel.downloadSpeed.floatValue , key2 = viewModel.scanProgresses) {
-        viewModel.speedSmooth.animateTo(targetValue = viewModel.downloadSpeed.floatValue)
+    LaunchedEffect(key1 = uiState.arcValue) {
+        viewModel.speedSmooth.animateTo(targetValue = uiState.arcValue)
     }
 
     Column(
@@ -66,17 +62,17 @@ fun SpeedTestScreen() {
                     .aspectRatio(ratio = 1f)
         ) {
             CircularSpeedIndicator(value = uiState.arcValue , angle = 240f)
-            StartButton(isEnabled = ! uiState.inProgress && ! viewModel.testRunning) {
-                viewModel.startSpeedTest()
+            StartButton(isEnabled = ! uiState.inProgress) {
+                viewModel.startSpeedTest(context = context)
             }
             SpeedValue(value = uiState.speed)
         }
+
         AdditionalInfo(
             ping = uiState.ping , wifiStrength = uiState.wifiStrength , maxSpeed = uiState.maxSpeed
         )
     }
 }
-
 
 @Composable
 fun SpeedValue(value : String) {
@@ -116,9 +112,11 @@ fun AdditionalInfo(ping : String , wifiStrength : String , maxSpeed : String) {
         }
     }
 
-    Row(modifier = Modifier
-            .fillMaxWidth()
-            .height(intrinsicSize = IntrinsicSize.Min)) {
+    Row(
+        modifier = Modifier
+                .fillMaxWidth()
+                .height(intrinsicSize = IntrinsicSize.Min)
+    ) {
         InfoColumn(title = stringResource(id = R.string.ping) , value = ping)
         VerticalDivider()
         InfoColumn(
@@ -163,7 +161,7 @@ fun DrawScope.drawArcs(progress : Float , maxValue : Float , color : Color) {
 
     (0..20).forEach { animationProgress ->
         drawArc(
-            color = color.copy(alpha = animationProgress / 900f) , startAngle = startAngle , sweepAngle = sweepAngle , useCenter = false , topLeft = topLeft , size = size , style = Stroke(width = 480f - animationProgress * 20f , cap = StrokeCap.Round)
+            color = color.copy(alpha = animationProgress / 900f) , startAngle = startAngle , sweepAngle = sweepAngle , useCenter = false , topLeft = topLeft , size = size , style = Stroke(width = 420f - animationProgress * 20f , cap = StrokeCap.Round)
         )
     }
 
@@ -179,7 +177,7 @@ fun DrawScope.drawLines(
     val startValue : Float = (progress / 100f) * numberOfLines
 
     (0 until numberOfLines).forEach { index ->
-        val alpha : Float = if (index >= startValue) 1f else 0f;
+        val alpha : Float = if (index >= startValue) 1f else 0f
         rotate(degrees = index * oneRotation + (180 - maxValue) / 2) {
             drawLine(
                 color = color.copy(alpha = alpha) , start = Offset(x = if (index % 5 == 0) 80f else 30f , y = size.height / 2) , end = Offset(x = 0f , y = size.height / 2) , strokeWidth = 6f , cap = StrokeCap.Round

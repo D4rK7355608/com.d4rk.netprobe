@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class SpeedSmoothAnimation(
     initialValue : Float = 0f , private val animationSpec : AnimationSpec<Float> = spring(
-        dampingRatio = Spring.DampingRatioMediumBouncy , stiffness = Spring.StiffnessLow
+        dampingRatio = Spring.DampingRatioLowBouncy , stiffness = Spring.StiffnessLow
     )
 ) {
     var value : Float by mutableFloatStateOf(initialValue)

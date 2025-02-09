@@ -1,11 +1,11 @@
 package com.d4rk.netprobe.ui.screens.scanner
 
 import android.app.Application
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.netprobe.R
-import com.d4rk.netprobe.data.model.ui.screens.UiScannerScreen
 import com.d4rk.netprobe.data.model.ui.screens.ScanResult
+import com.d4rk.netprobe.data.model.ui.screens.UiScannerScreen
+import com.d4rk.netprobe.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,19 +25,17 @@ import java.net.NetworkInterface
 import java.net.Socket
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
-
 import java.util.Enumeration
 
-class ScanViewModel(application : Application) : ViewModel() {
+class ScanViewModel(application : Application) : BaseViewModel(application) {
 
     private val context = application
 
-    private val _state = MutableStateFlow(UiScannerScreen())
+    private val _state : MutableStateFlow<UiScannerScreen> = MutableStateFlow(value = UiScannerScreen())
     val state : StateFlow<UiScannerScreen> = _state.asStateFlow()
 
     private val _snackbarEvent = MutableSharedFlow<String>()
     val snackbarEvent : SharedFlow<String> = _snackbarEvent.asSharedFlow()
-
 
     init {
         _state.value = _state.value.copy(

@@ -12,9 +12,9 @@ android {
     namespace = "com.d4rk.netprobe"
     defaultConfig {
         applicationId = "com.d4rk.netprobe"
-        minSdk = 26 // TODO: Downgrade to 23
+        minSdk = 23
         targetSdk = 35
-        versionCode = 15
+        versionCode = 16
         versionName = "2.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -92,7 +92,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.51") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.53") {
         isTransitive = true
     }
 
