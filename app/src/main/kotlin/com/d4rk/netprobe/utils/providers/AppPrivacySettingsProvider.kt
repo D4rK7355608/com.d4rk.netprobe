@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.interfaces.providers.PrivacySettingsProvider
-import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.core.AppCoreManager
 import com.d4rk.netprobe.ui.screens.settings.general.GeneralSettingsActivity
 import com.d4rk.netprobe.ui.screens.settings.general.SettingsContent

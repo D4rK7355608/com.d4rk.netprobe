@@ -13,12 +13,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="Refactored animation and UI components&#10;&#10;- Reduced the width of the progress ring in the SpeedTestScreen.&#10;- Adjusted the damping ratio in the SpeedSmoothAnimation class.&#10;- Refactored the ScanViewModel to inherit from BaseViewModel.">
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/screens/UiSpeedTestScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/data/model/ui/screens/UiSpeedTestScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/components/animation/SpeedSmoothAnimation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/components/animation/SpeedSmoothAnimation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/scanner/ScanViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/scanner/ScanViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/speedtest/SpeedTestScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/speedtest/SpeedTestScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/speedtest/SpeedTestViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/d4rk/netprobe/ui/screens/speedtest/SpeedTestViewModel.kt" afterDir="false" />
+    <list default="true" id="3a0cf770-9661-4b50-899b-19fc96bacccd" name="Changes" comment="feat(speedtest): Refactor SpeedTest, improve UI/UX, update icons, and update dependencies&#10;&#10;This commit significantly refactors the SpeedTest feature for improved modularity and performance. It also includes UI/UX enhancements, updated application icons and splash screen, and dependency updates.&#10;&#10;- Refactored SpeedTest with a new repository and view model structure.&#10;- Improved UI elements and animations.&#10;- Updated application icons, including a new animated splash screen.&#10;- Updated project dependencies to the latest versions.&#10;- Improved code structure and organization.">
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\mihai.condrea\.android\avd\Medium_Tablet_API_29.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\mihai.condrea\.android\avd\Android_6.0_API_23_.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -81,8 +80,7 @@
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\d4rk7\Documents\Google\Google Play Console\Apps\Keys\com.d4rk.netprobe.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\play\keys\com.d4rk.netprobe.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
@@ -131,7 +129,7 @@
     "ExportApk.ApkPathForCart_Calculator.app": "C:\\Users\\d4rk7\\AndroidStudioProjects\\com.d4rk.cartcalculator\\app",
     "ExportApk.ApkPathForNet_Probe.app": "C:\\Users\\d4rk7\\AndroidStudioProjects\\com.d4rk.netprobe\\app",
     "ExportBundle.BundlePathForCart_Calculator.app": "C:\\Users\\d4rk7\\AndroidStudioProjects\\com.d4rk.cartcalculator\\app",
-    "ExportBundle.BundlePathForNet_Probe.app": "C:\\Users\\d4rk7\\AndroidStudioProjects\\com.d4rk.netprobe\\app",
+    "ExportBundle.BundlePathForNet_Probe.app": "C:\\Users\\mihai.condrea\\StudioProjects\\com.d4rk.netprobe\\app",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -143,11 +141,11 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mihai.condrea/StudioProjects/com.d4rk.netprobe/app/src/main/kotlin/com/d4rk/netprobe/ui/components/dialogs",
+    "last_opened_file_path": "C:/Users/mihai.condrea/StudioProjects/com.d4rk.netprobe/app",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   },
   "keyToStringList": {
@@ -166,11 +164,11 @@
       <recent name="com.d4rk.cartcalculator.ui.lists" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\res\values" />
+      <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\res\mipmap-xhdpi" />
       <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\ui\components\dialogs" />
       <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\ui\screens\startup" />
       <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\ui\screens\support" />
-      <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\res\drawable-xhdpi" />
-      <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\ui\screens" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mihai.condrea\StudioProjects\com.d4rk.netprobe\app\src\main\kotlin\com\d4rk\netprobe\ui\main" />
@@ -504,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738757713098</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat(speedtest): Refactor SpeedTest, improve UI/UX, update icons, and update dependencies&#10;&#10;This commit significantly refactors the SpeedTest feature for improved modularity and performance. It also includes UI/UX enhancements, updated application icons and splash screen, and dependency updates.&#10;&#10;- Refactored SpeedTest with a new repository and view model structure.&#10;- Improved UI elements and animations.&#10;- Updated application icons, including a new animated splash screen.&#10;- Updated project dependencies to the latest versions.&#10;- Improved code structure and organization.">
+      <option name="closed" value="true" />
+      <created>1739133755793</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1739133755793</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,19 +543,20 @@
     <MESSAGE value="Small ui updates and string formatting" />
     <MESSAGE value="Fixed the app animations and added view model for the speed tester" />
     <MESSAGE value="Updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
+    <MESSAGE value="feat(speedtest): Refactor SpeedTest, improve UI/UX, update icons, and update dependencies&#10;&#10;This commit significantly refactors the SpeedTest feature for improved modularity and performance. It also includes UI/UX enhancements, updated application icons and splash screen, and dependency updates.&#10;&#10;- Refactored SpeedTest with a new repository and view model structure.&#10;- Improved UI elements and animations.&#10;- Updated application icons, including a new animated splash screen.&#10;- Updated project dependencies to the latest versions.&#10;- Improved code structure and organization." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(speedtest): Refactor SpeedTest, improve UI/UX, update icons, and update dependencies&#10;&#10;This commit significantly refactors the SpeedTest feature for improved modularity and performance. It also includes UI/UX enhancements, updated application icons and splash screen, and dependency updates.&#10;&#10;- Refactored SpeedTest with a new repository and view model structure.&#10;- Improved UI elements and animations.&#10;- Updated application icons, including a new animated splash screen.&#10;- Updated project dependencies to the latest versions.&#10;- Improved code structure and organization." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.d4rk.netprobe">
           <value>
-            <CheckInfo lastCheckTimestamp="1738757582507" />
+            <CheckInfo lastCheckTimestamp="1739112956048" />
           </value>
         </entry>
         <entry key="com.d4rk.netprobe.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1738757582507" />
+            <CheckInfo lastCheckTimestamp="1739112956048" />
           </value>
         </entry>
       </map>

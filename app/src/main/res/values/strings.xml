@@ -91,7 +91,6 @@
     <string name="about">About</string>
     <string name="summary_preference_settings_about">Learn more about Net Probe</string>
 
-    <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="manufacturer">Manufacturer:</string>
     <string name="device_model">Device Model:</string>
     <string name="android_version">Android Version:</string>

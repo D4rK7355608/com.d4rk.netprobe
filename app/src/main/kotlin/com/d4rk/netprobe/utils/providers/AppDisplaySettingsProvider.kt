@@ -3,7 +3,6 @@ package com.d4rk.netprobe.utils.providers
 import android.content.Intent
 import androidx.compose.runtime.Composable
 import com.d4rk.android.libs.apptoolkit.utils.interfaces.providers.DisplaySettingsProvider
-import com.d4rk.netprobe.R
 import com.d4rk.netprobe.data.core.AppCoreManager
 import com.d4rk.netprobe.ui.components.dialogs.SelectLanguageAlertDialog
 import com.d4rk.netprobe.ui.components.dialogs.SelectStartupScreenAlertDialog

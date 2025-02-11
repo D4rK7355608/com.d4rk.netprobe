@@ -20,11 +20,11 @@ class SpeedSmoothAnimation(
 ) {
     var value : Float by mutableFloatStateOf(initialValue)
 
-    private val animatable : Animatable<Float , AnimationVector1D> = Animatable(initialValue = initialValue)
+    private val animationState : Animatable<Float , AnimationVector1D> = Animatable(initialValue = initialValue)
     private val scope : CoroutineScope = CoroutineScope(context = Job() + Dispatchers.Main)
 
     suspend fun animateTo(targetValue : Float) {
-        animatable.animateTo(targetValue = targetValue , animationSpec = animationSpec) {
+        animationState.animateTo(targetValue = targetValue , animationSpec = animationSpec) {
             this@SpeedSmoothAnimation.value = this.value
         }
     }
@@ -32,7 +32,7 @@ class SpeedSmoothAnimation(
     fun resetTo(targetValue : Float) {
         value = targetValue
         scope.launch {
-            animatable.snapTo(targetValue = targetValue)
+            animationState.snapTo(targetValue = targetValue)
         }
     }
 }
